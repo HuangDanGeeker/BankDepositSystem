@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.IStaffDAO">
+    <resultMap id="Staff" type="com.bean.Staff">
+        <result column="name" property="name"  jdbcType="VARCHAR" />
+        <result column="no" property="no"  jdbcType="VARCHAR" />
+        <result column="passwd" property="passwd"  jdbcType="INT" />
+        <result column="phone" property="phone"  jdbcType="VARCHAR" />
+        <result column="birthday" property="birthday"  jdbcType="VARCHAR" />
+    </resultMap>
+
+    <insert id="insertStaff">
+        INSERT INTO staff values(#{name}, #{no}, #{passwd}, #{birthday},#{phone})
+    </insert>
+    <insert id="insertStaff" parameterMap="com.bean.Staff">
+        INSERT INTO staff values(#{staff.name}, #{staff.no}, #{staff.passwd}, #{staff.birthday},#{staff.phone})
+    </insert>
+
+    <delete id="deleteStaff">
+        DELETE FROM staff where no=#{no}
+    </delete>
+    <delete id="deleteStaff"  parameterMap="com.bean.Staff">
+        DELETE FROM staff where no=#{staff.no}
+    </delete>
+
+    <update id="updateStaff">
+        UPDATE staff SET name=#{name}, birthday=#{birthday}, passwd=#{passwd}, phone=#{phone}
+        WHERE no=#{no}
+    </update>
+    <update id="updateStaff" parameterMap="com.bean.Staff">
+        UPDATE staff SET name=#{staff.name}, birthday=#{staff.birthday}, passwd=#{staff.passwd}, phone=#{staff.phone}
+        WHERE no=#{staff.no}
+    </update>
+
+    <select id="queryPassWd" resultType="java.lang.String">
+        SELECT passwd FROM staff WHERE no=#{no}
+    </select>
+    <select id="queryPassWd"  parameterMap="com.bean.Staff" resultType="java.lang.String">
+        SELECT passwd FROM staff WHERE no=#{staff.no}
+    </select>
+
+    <update id="updatePassWd">
+        UPDATE staff set passwd=#{passwd} WHERE no=#{no}
+    </update>
+    <update id="updatePassWd" parameterMap="com.bean.Staff">
+        UPDATE staff set passwd=#{staff.passwd} WHERE no=#{staff.no}
+    </update>
+</mapper>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.ICustomerDAO">
+    <resultMap id="customer" type="com.bean.Customer">
+        <result column="name" property="name" jdbcType="VARCHAR"/>
+        <result column="no" property="no" jdbcType="VARCHAR"/>
+        <result column="passwd" property="passwd" jdbcType="INT"/>
+        <result column="phone" property="phone" jdbcType="VARCHAR"/>
+        <result column="address" property="address" jdbcType="VARCHAR"/>
+        <result column="birthday" property="birthday" jdbcType="INT"/>
+    </resultMap>
+
+    <insert id="insertCustomer">
+        INSERT INTO customer values(#{name}, #{no}, #{passwd}, #{birthday}, #{phone}, #{address})
+    </insert>
+    <insert id="insertCustomer" parameterMap="com.bean.Customer">
+        INSERT INTO customer values(#{name}, #{no}, #{passwd}, #{birthday}, #{phone}, #{address})
+    </insert>
+
+    <delete id="deleteCustomer">
+        DELETE FROM customer where no=#{no}
+    </delete>
+    <delete id="deleteCustomer" parameterMap="com.bean.Customer">
+        DELETE FROM customer where no=#{customer.no}
+    </delete>
+
+    <update id="updateCustomer">
+        UPDATE customer SET name=#{name}, birthday=#{birthday}, passwd=#{passwd}, phone=#{phone}, address=#{address}
+        WHERE no=#{no}
+    </update>
+    <update id="updateCustomer" parameterMap="com.bean.Customer">
+        UPDATE customer SET name=#{customer.name}, birthday=#{customer.birthday}, passwd=#{customer.passwd}, phone=#{customer.phone}, address=#{customer.address}
+        WHERE no=#{customer.no}
+    </update>
+
+    <select id="queryPassWd" resultType="java.lang.String">
+        SELECT passwd FROM customer WHERE no=#{no}
+    </select>
+    <select id="queryPassWd" parameterMap="com.bean.Customer" resultType="java.lang.String">
+        SELECT passwd FROM customer WHERE no=#{customer.no}
+    </select>
+
+    <update id="updatePassWd">
+        UPDATE customer set passwd=#{passwd} WHERE no=#{no}
+    </update>
+    <update id="updatePassWd" parameterMap="com.bean.Customer">
+        UPDATE customer set passwd=#{customer.passwd} WHERE no=#{customer.no}
+    </update>
+    
+</mapper>
