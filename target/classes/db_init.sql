@@ -3,7 +3,7 @@ use bank_deposit_system;
 -- 建表
 -- 1.创建员工表
 drop table staff;
-create TABLE staff (name VARCHAR(20), No VARCHAR(20) PRIMARY KEY, passwd INT DEFAULT 111111, birthday INT, phone VARCHAR(20)) CHARSET=utf8;
+create TABLE staff (name VARCHAR(20), no VARCHAR(20) PRIMARY KEY, passwd INT DEFAULT 111111, birthday INT, phone VARCHAR(20)) CHARSET=utf8;
 -- 2.创建客户表
 drop table customer;
 create TABLE customer (name VARCHAR(20), no VARCHAR(20) PRIMARY KEY, passwd INT DEFAULT 111111,birthday INT, phone VARCHAR(20), address VARCHAR(40)) CHARSET=utf8;

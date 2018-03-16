@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.IStaffOperRecdDAO">
+    <resultMap id="StaffOperRecord" type="com.bean.StaffOperRecord">
+        <result column="no" property="no" jdbcType="VARCHAR"/>
+        <result column="operType" property="operType" jdbcType="INT"/>
+        <result column="custmNo" property="custmNo" jdbcType="VARCHAR"/>
+        <result column="custmName" property="custmName" jdbcType="VARCHAR"/>
+        <result column="nums" property="nums" jdbcType="INT"/>
+        <result column="operDate" property="operDate" jdbcType="Date"/>
+    </resultMap>
+
+    <!--查询记录-->
+    <select id="queryRecord" parameterType="java.lang.String" resultMap="StaffOperRecord">
+        SELECT * FROM recd_staff_${no}
+    </select>
+    <select id="queryRecordByType" parameterType="java.lang.String, java.lang.Integer" resultMap="StaffOperRecord">
+        SELECT * FROM recd_staff_${no} where operType=#{operType}
+    </select>
+    <select id="queryRecordByDate" parameterType="java.lang.String, java.sql.Date, java.sql.Date" resultMap="StaffOperRecord">
+        SELECT * FROM recd_staff_${no} where operType=#{operType} and operDate <= #{endDate} and operDate >= #{startDate}
+    </select>
+    <select id="queryRecordByBoth" parameterType="java.lang.String, java.lang.Integer, java.sql.Date, java.sql.Date" resultMap="StaffOperRecord">
+        SELECT * FROM recd_staff_${no} where operType=#{operType} and operDate <= #{endDate} and operDate >= #{startDate}
+    </select>
+
+    <!--添加纪录-->
+    <insert id="insertRecord" parameterMap="com.bean.StaffOperRecord">
+        INSERT INTO recd_staff_${record.no} values(#{record.no}, #{record.operType}, #{record.custmNo}, #{record.custmName}, #{record.nums}, #{record.operDate})
+    </insert>
+
+
+</mapper>
