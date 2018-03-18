@@ -4,9 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.context.request.RequestContextHolder;
-import org.springframework.web.context.request.ServletRequestAttributes;
 
+import java.time.LocalDate;
+import java.time.Month;
+import java.time.Year;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -37,8 +39,14 @@ public class SttafOperationController {
         System.out.println("cutmNo " + custmNo);
         System.out.println("creditCardNum " + creditCardNum);
         System.out.println("nums " + nums);
-        System.out.println("dueTime " + dueTime);
+
         System.out.println("type " + type);
+        LocalDate date = LocalDate.now();
+        int month = Integer.valueOf(date.getMonth().toString());
+        month = month + Integer.valueOf(dueTime);
+        int year = date.getYear() + month/12;
+        LocalDate endDate = LocalDate.of(year, (month % 12 + 1), date.getDayOfMonth());
+        System.out.println("dueTime " + year +" "+ (month % 12 + 1) +" "+ date.getDayOfMonth());
 
         Map result = new HashMap<String, String>();
         result.put("status", "success");

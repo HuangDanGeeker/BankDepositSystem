@@ -27,7 +27,6 @@ public class CommonController {
         List<String> list = new ArrayList<String>();
         result.put("resultList", list);
         result.put("count", list.size());
-        result.put("count", 0);
         return result;
     }
 }
