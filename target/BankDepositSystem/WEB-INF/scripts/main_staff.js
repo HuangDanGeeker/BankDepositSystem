@@ -44,10 +44,11 @@ function displayPanel(b1, b2, b3, b4) {
 
 
 function copyCreditNum() {
-    creditCardNum = $('#creditCardNum');
+    creditCardNum = $('#createCustomerPanel #creditCardNum').val();
 }
 function pasteCreditNum() {
-     $('#creditCardNum').val(creditCardNum);
+     $('#anyTimeDealPanel #creditCardNum').val(creditCardNum);
+     $('#scheduleDealPanel #creditCardNum').val(creditCardNum);
 }
 
 function submitCreateCredit(){
