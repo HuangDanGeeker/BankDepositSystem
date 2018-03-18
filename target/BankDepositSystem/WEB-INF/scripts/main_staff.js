@@ -6,8 +6,11 @@ var creditCardNum = -1;
 
 window.onload = function () {
     console.log($.cookie("userName"));
+    console.log($.cookie("userNo"));
     console.log($.cookie("loginRole"));
 
+    document.getElementById('userName').innerHTML = $.cookie("userName");
+    document.getElementById('userNo').innerHTML = $.cookie("userNo");
     //TODO
     // ${'#custmName').oninputt 提供用户账号提示功能
 }

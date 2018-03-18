@@ -28,9 +28,9 @@ public class BasicController {
         return "login";
     }
 
-    @RequestMapping("/login/{userName}/{userPasswd}")
+    @RequestMapping("/login/{userName}/{userNo}/{userPasswd}")
     @ResponseBody
-    public Map<Object, String> login(@PathVariable String userName, @PathVariable String userPasswd){
+    public Map<Object, String> login(@PathVariable String userName, @PathVariable String userNo, @PathVariable String userPasswd){
         System.out.println("login");
         System.out.println("userName " + userName);
         System.out.println("userPasswd " + userPasswd);
@@ -38,6 +38,8 @@ public class BasicController {
         Map result = new HashMap<String, String>();
         result.put("loginStatus", "success");
         result.put("loginRole", "staff");
+        result.put("userName", userName);
+        result.put("userNo", userNo);
         return result;
     }
 

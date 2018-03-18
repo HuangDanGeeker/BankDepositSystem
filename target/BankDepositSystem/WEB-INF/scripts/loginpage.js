@@ -8,12 +8,13 @@ window.onload = function () {
 
 function login() {
     var userName = $('#userName').val();
+    var userNo = $('#userNo').val();
     var userPasswd = $('#userPasswd').val();
     console.log("value : " + userName +  "  " + userPasswd);
 
     //TODO 记住 -> 用户名和密码
     $.ajax({
-        url:"http://localhost:8080/BankDepositSystem/login/"+userName+"/"+userPasswd,
+        url:"http://localhost:8080/BankDepositSystem/login/"+userName+"/"+userNo+"/"+userPasswd,
         dataType:'jsonp',
         processData: true,
         type:'put',
@@ -25,7 +26,8 @@ function login() {
                 $.cookie("userName", userName);
                 if(loginResult.loginRole == 'staff'){
                     $.cookie("loginRole", "Staff");
-
+                    $.cookie("userName", loginResult.userName);
+                    $.cookie("userNo", loginResult.userNo);
                     window.location.href = "http://localhost:8080/BankDepositSystem/main/staff";
                 }else{
                     $.cookie("loginRole", "Custm");
