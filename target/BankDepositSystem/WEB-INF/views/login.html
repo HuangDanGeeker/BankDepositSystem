@@ -6,12 +6,24 @@
     <link rel="stylesheet" href="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
     <script src="http://cdn.static.runoob.com/libs/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <script src="./scripts/login.js"></script>
+    <script src="https://cdn.bootcss.com/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+    <script src="./scripts/loginpage.js"></script>
+    <link rel="stylesheet" href="./styles/common.css">
+    <link rel="stylesheet" href="./styles/loginpage.css">
 </head>
 <body>
 
 <div class="container-fluid">
     <div class="row">
+        <div id="headline" class="">
+            <div class="pull-right text-center">
+                <button class="btn btn-default headline-btn" onclick="signin()">sign in</button>
+                <button class="btn btn-default headline-btn" onclick="signup()">sign up</button>
+
+            </div>
+        </div>
+    </div>
+    <div class="row" id="loginPage">
         <div class="col-md-4 col-md-offset-4">
         <form role="form">
         <div class="form-group">
@@ -27,10 +39,46 @@
                 <input type="checkbox" />记住我
             </label>
         </div>
-            <button type="button" class="btn btn-default" onclick="login()">提交</button>
+            <div class="text-center">
+                <button type="button" class="btn btn-primary" onclick="login()">提交</button>
+            </div>
         </form>
         </div>
     </div>
+    <div class="row" id="registPage">
+        <div class="col-md-4 col-md-offset-4">
+        <form role="form">
+        <div class="form-group">
+            <label for="registName">用户名</label>
+            <input value="1" type="text" class="form-control" id="registName" name="registName" placeholder="请输入用户名"/>
+        </div>
+        <div class="form-group">
+            <label for="registPasswd">密 码</label>
+            <input value="2" type="password" class="form-control" id="registPasswd" name="registPasswd" placeholder="请输入密码" />
+        </div>
+        <div class="form-group">
+            <label for="checkPasswd">确认密码</label>
+            <input value="2" type="password" class="form-control" id="checkPasswd" name="checkPasswd" placeholder="请输入密码" />
+        </div>
+        <div class="form-group">
+            <label for="registBirthday">出生年月</label>
+            <input type="date" class="form-control" id="registBirthday" name="registBirthday" placeholder="请输入密码" />
+        </div>
+        <div class="form-group">
+            <label for="registPhone">联系电话</label>
+            <input value="2" type="patextssword" class="form-control" id="registPhone" name="registPhone" placeholder="请输入密码" />
+        </div>
+        <div class="form-group">
+            <label for="registAddress">联系地址</label>
+            <input value="2" type="text" class="form-control" id="registAddress" name="registAddress" placeholder="请输入密码" />
+        </div>
+        <div class="text-center">
+            <button type="button" class="btn btn-primary" onclick="regist()">确认</button>
+        </div>
+        </form>
+        </div>
+    </div>
+</div>
 </div>
 
 </body>

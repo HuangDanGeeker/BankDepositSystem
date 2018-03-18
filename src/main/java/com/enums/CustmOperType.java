@@ -6,5 +6,5 @@ package com.enums;
  */
 public enum CustmOperType {
 
-    Deposit, Draw, Regist, ChaPass
+    Deposit, Draw, Regist, ChaPass, Login
 }

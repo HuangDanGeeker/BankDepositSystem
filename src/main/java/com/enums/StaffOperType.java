@@ -5,5 +5,5 @@ package com.enums;
  * Enums of Staff Operation Types
  */
 public enum StaffOperType {
-    Deposit, Draw, Regist, ChaPass
+    Deposit, Draw, Regist, ChaPass, Login
 }

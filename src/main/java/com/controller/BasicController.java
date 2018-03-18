@@ -5,6 +5,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.websocket.server.PathParam;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by HuangDanGeeker on 2018/3/15.
@@ -26,11 +28,35 @@ public class BasicController {
 
     @RequestMapping("/login/{userName}/{userPasswd}")
     @ResponseBody
-    public String login(@PathVariable String userName, @PathVariable String userPasswd){
+    public Map<Object, String> login(@PathVariable String userName, @PathVariable String userPasswd){
         System.out.println("login");
-        System.out.println("userName" + userName);
-        System.out.println("userPasswd" + userPasswd);
-        return "{'ssss':'2'}";
+        System.out.println("userName " + userName);
+        System.out.println("userPasswd " + userPasswd);
+        // return cookie as 'remember me ' request
+        Map result = new HashMap<String, String>();
+        result.put("loginStatus", "success");
+        result.put("loginRole", "staff");
+        return result;
+    }
+
+    @RequestMapping("/regist/{registName}/{registPasswd}/{registBirthday}/{registPhone}/{registAddress}")
+    @ResponseBody
+    public Map<String, String> login(@PathVariable String registName, @PathVariable String registPasswd, @PathVariable String registBirthday, @PathVariable String registPhone, @PathVariable String registAddress){
+        System.out.println("regist");
+
+        Map result = new HashMap<String, String>();
+        result.put("registStatus", "success");
+        return result;
+    }
+
+    @RequestMapping("/main/{type}")
+    public String mainpage(@PathVariable String type) {
+        if (type.equalsIgnoreCase("staff")) {
+            return "main_staff";
+        } else if (type.equalsIgnoreCase("custm")){
+            return "main_custm";
+        }
+        return "loginpage";
     }
 
     @RequestMapping("/depositpage")
@@ -39,15 +65,6 @@ public class BasicController {
     }
 
 
-    @RequestMapping(value="/delete/{userId}/{friendId}/{fullDelete}", method=RequestMethod.GET)
-    @ResponseBody
-    public String deleteFriend(@PathVariable String userId, @PathVariable String friendId, @PathVariable String fullDelete){
-        System.out.println("=====> deleteFriend");
-        System.out.println("userID " + userId);
-        System.out.println("friendId " + friendId);
-        System.out.println("fullDelete " + fullDelete);
 
-        return "{\"result\":1}";
-    }
 
 }
