@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="04f700b1-4159-49cf-ad17-30584b3ecf4f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/BankDepositSystem/WEB-INF/classes/com/controller/BasicController.class" afterPath="$PROJECT_DIR$/target/BankDepositSystem/WEB-INF/classes/com/controller/BasicController.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/controller/BasicController.class" afterPath="$PROJECT_DIR$/target/classes/com/controller/BasicController.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/controller/BasicController.java" afterPath="$PROJECT_DIR$/src/main/java/com/controller/BasicController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/scripts/loginpage.js" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/scripts/loginpage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/scripts/main_staff.js" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/scripts/main_staff.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main_staff.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main_staff.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/BankDepositSystem/WEB-INF/scripts/loginpage.js" afterPath="$PROJECT_DIR$/target/BankDepositSystem/WEB-INF/scripts/loginpage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/BankDepositSystem/WEB-INF/scripts/main_staff.js" afterPath="$PROJECT_DIR$/target/BankDepositSystem/WEB-INF/scripts/main_staff.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/BankDepositSystem/WEB-INF/views/login.html" afterPath="$PROJECT_DIR$/target/BankDepositSystem/WEB-INF/views/login.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/BankDepositSystem/WEB-INF/views/main_staff.html" afterPath="$PROJECT_DIR$/target/BankDepositSystem/WEB-INF/views/main_staff.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -95,8 +86,8 @@
       <file leaf-file-name="main_staff.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main_staff.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="10" column="59" lean-forward="false" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
+            <state relative-caret-position="88">
+              <caret line="4" column="31" lean-forward="false" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
               <folding>
                 <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#form#0;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -196,10 +187,10 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/styles/common.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/styles/main_staff.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/controller/BasicController.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main_staff.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/scripts/loginpage.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/scripts/main_staff.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main_staff.html" />
       </list>
     </option>
   </component>
@@ -1078,12 +1069,12 @@
       <workItem from="1521213526583" duration="620000" />
       <workItem from="1521294800008" duration="7833000" />
       <workItem from="1521337349495" duration="7813000" />
-      <workItem from="1521345925234" duration="16220000" />
+      <workItem from="1521345925234" duration="16384000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54941000" />
+    <option name="totallyTimeSpent" value="55105000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1601,8 +1592,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main_staff.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
-          <caret line="10" column="59" lean-forward="false" selection-start-line="10" selection-start-column="59" selection-end-line="10" selection-end-column="59" />
+        <state relative-caret-position="88">
+          <caret line="4" column="31" lean-forward="false" selection-start-line="4" selection-start-column="31" selection-end-line="4" selection-end-column="31" />
           <folding>
             <element signature="n#style#0;n#form#0;n#div#0;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#form#0;n#div#1;n#div#0;n#div#2;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
