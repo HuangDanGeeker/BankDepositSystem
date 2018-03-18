@@ -7,13 +7,15 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.websocket.server.PathParam;
 import java.util.HashMap;
 import java.util.Map;
-
+import org.apache.log4j.Logger;
 /**
  * Created by HuangDanGeeker on 2018/3/15.
  * Basic controller for test
  */
 @Controller
 public class BasicController {
+
+    private static Logger logger = Logger.getLogger(BasicController.class);
 
     @RequestMapping("/basic")
     public String basic(){
