@@ -43,3 +43,7 @@ function displayPanel(b1, b2, b3, b4) {
 function copyCreditNum() {
     creditCardNum = $('#creditCardNum');
 }
+function pasteCreditNum() {
+     $('#creditCardNum').val(creditCardNum);
+}
+
