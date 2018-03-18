@@ -1,0 +1,86 @@
+#cmdline{
+    height: 50px;
+    background-color: cornflowerblue;
+    margin-top: 1%;
+}
+
+#createCustmDiv{
+    background-color: red;
+    height: 50px;
+    width: 10%;
+    float:left;
+    margin-left: 5%;
+    margin-right: 2.5%;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 10px 10px;
+}
+
+#anyTimeDealDiv{
+    background-color: red;
+    height: 50px;
+    width: 12%;
+    float:left;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 10px 10px;
+}
+
+#scheduleDealDiv{
+    background-color: red;
+    height: 50px;
+    width: 12%;
+    float:left;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 10px 10px;
+}
+#accountDetailDiv{
+    background-color: red;
+    height: 50px;
+    width: 10%;
+    float:left;
+    margin-left: 2.5%;
+    /*margin-right: 5%;*/
+    text-align: center;
+    line-height: 50px;
+    border-radius: 10px 10px;
+}
+
+#operatePanel{
+    background-color: cornflowerblue;
+    height: 400px;
+    margin-top: 1%;
+    text-align: center;
+    border-radius: 10px 10px;
+}
+
+
+#createCustomerPanel{
+    margin-top: 10px;
+    background-color: cornflowerblue;
+}
+
+#anyTimeDealPanel{
+    background-color: cornflowerblue;
+}
+#scheduleDealPanel{
+    background-color: cornflowerblue;
+}
+#accountDetailPanel{
+    background-color: cornflowerblue;
+}
+
+#custmCreditNum{
+    float: left;
+    width:70%;
+}
+
+#copyCreditNumBtn{
+    float: left;
+    margin-left:2%;
+}

@@ -38,6 +38,7 @@ function login() {
 }
 function regist() {
     var registName = $('#registName').val();
+    var registRole = $('#registRole').val();
     var registPasswd = $('#registPasswd').val();
     var registBirthday= $('#registBirthday').val();
     var registPhone = $('#registPhone').val();
@@ -45,14 +46,23 @@ function regist() {
 
     //TODO 记住 -> 用户名和密码
     $.ajax({
-        url:"http://localhost:8080/BankDepositSystem/regist/"+registName+"/"+registPasswd+"/"+registBirthday+"/"+registPhone+"/"+registAddress,
+        url:"http://localhost:8080/BankDepositSystem/regist/"+registName+"/"+registRole+"/"+registPasswd+"/"+registBirthday+"/"+registPhone+"/"+registAddress,
         dataType:'jsonp',
         processData: true,
         type:'put',
         success:function(){
         },
         error:function(XMLHttpRequest, textStatus, errorThrown) {
-            console.log(XMLHttpRequest.responseText);
+            var registResult = eval("("+XMLHttpRequest.responseText+")");
+            if(registResult.registStatus == "success"){
+                $.cookie("userName", registName);
+                $.cookie("userName", registPasswd);
+                signin();
+                $('#userName').val(registName);
+                $('#userPasswd').val(registPasswd);
+            }else{
+                //TODO
+            }
         }});
 }
 
