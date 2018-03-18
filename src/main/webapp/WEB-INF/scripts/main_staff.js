@@ -1,9 +1,8 @@
 /**
  * Created by 1 on 2018/3/18.
  */
-
+var p;
 var creditCardNum = -1;
-
 window.onload = function () {
     console.log($.cookie("userName"));
     console.log($.cookie("userNo"));
@@ -13,6 +12,10 @@ window.onload = function () {
     document.getElementById('userNo').innerHTML = $.cookie("userNo");
     //TODO
     // ${'#custmName').oninputt 提供用户账号提示功能
+
+    $('#createCustomerPanel #custmName').bind('input', function(param){checkUserName(param);});
+    $('#anyTimeDealPanel #custmName').bind('input', function(param){checkUserName(param);});
+    $('#scheduleDealPanel #custmName').bind('input', function(param){checkUserName(param);});
 }
 
 
@@ -73,8 +76,6 @@ function submitCreateCredit(){
 
 function submitAnyTimeDeposit() {
 
-    console.log("hehehe");
-
     var custmNo = $('#anyTimeDealPanel #custmNo').val();
     var creditCardNum = $('#anyTimeDealPanel #creditCardNum').val();
     var nums = $('#anyTimeDealPanel #custmNums').val();
@@ -92,7 +93,6 @@ function submitAnyTimeDeposit() {
             console.log("deposit succcess");
         }
     });
-    console.log("dadawda");
 }
 
 
@@ -114,5 +114,31 @@ function submitSpecificDeposit() {
             var result = eval("("+XMLHttpRequest.responseText+")");
             console.log("deposit succcess");
         }});
+}
+
+function checkUserName(param){
+
+    var userName = param.currentTarget.value;
+    var parent = $(param.currentTarget).parentsUntil('#operatePanel')[3];
+    var custmNoSelect = $(parent).find('#custmNo')[0];
+    $.ajax({
+        url:"http://localhost:8080/BankDepositSystem/checkUser/" + userName,
+        dataType:'jsonp',
+        processData: true,
+        type:'put',
+        success:function(){},
+        error:function(XMLHttpRequest, textStatus, errorThrown) {
+            var result = eval("("+XMLHttpRequest.responseText+")");
+            $(custmNoSelect).empty();
+            if(result.count != 0){
+                for(var i = 0; i < result.resultList.length; i++){
+                    $(custmNoSelect).append("<option>"+result.resultList[i]+"</option>>")
+                }
+            }else{
+                var info = $(parent).find('#info')[0];
+                $(info).text("NO UserNo");
+            }
+        }
+    });
 }
 

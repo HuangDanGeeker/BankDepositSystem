@@ -1,8 +1,7 @@
 package com.bean;
 
 import com.enums.StaffOperType;
-
-import java.sql.Date;
+import java.util.Date;
 
 /**
  * Created by HuangDanGeeker on 2018/3/16.
@@ -17,6 +16,14 @@ public class StaffOperRecord {
     Integer nums;
     Date operDate;
 
+    public StaffOperRecord(){
+        no= "123";
+        operType = StaffOperType.ChaPass;
+        custmNo = "123";
+        custmName = "123";
+        nums = 10;
+        operDate = new Date();
+    }
 
     public String getNo() {
         return no;
