@@ -2,11 +2,15 @@ package com.dao;
 
 import com.bean.Customer;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * Created by HuangDanGeeker on 2018/3/16.
  * 客户DAO
  */
+@Repository
 public interface ICustomerDAO {
 
     // 插入客户
@@ -22,8 +26,7 @@ public interface ICustomerDAO {
     void deleteCustomer(@Param("customer")Customer customer);
 
     // 查询客户
-    Customer queryCustomer(@Param("no") Integer no);
-    Customer queryCustomer(@Param("customer")Customer customer);
+    List<Customer> queryCustomer(@Param("no") Integer no, @Param("passwd") String custmPasswd, @Param("name") String name);
 
     // 查询密码
     Integer queryPassWd(@Param("no") String no, @Param("passwd") Integer passwd);

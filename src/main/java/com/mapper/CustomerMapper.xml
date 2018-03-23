@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.dao.ICustomerDAO">
-    <resultMap id="customer" operType="com.bean.Customer">
+    <resultMap id="customer" type="com.bean.Customer">
         <result column="name" property="name" jdbcType="VARCHAR"/>
         <result column="no" property="no" jdbcType="VARCHAR"/>
         <result column="passwd" property="passwd" jdbcType="INT"/>
@@ -36,8 +36,21 @@
     <select id="queryPassWd" resultType="java.lang.String">
         SELECT passwd FROM customer WHERE no=#{no}
     </select>
-    <select id="queryPassWd" parameterMap="com.bean.Customer" resultType="java.lang.String">
-        SELECT passwd FROM customer WHERE no=#{customer.no}
+
+    <select id="queryCustomer" resultType="java.lang.Boolean">
+        SELECT passwd FROM customer
+        <where>
+            <if test="no != null">
+                no=#{no}
+            </if>
+            <if test="passwd != null">
+                and passwd = #{passwd}
+            </if>
+            <if test="name != null">
+                and name = #{name}
+            </if>
+        </where>
+
     </select>
 
     <update id="updatePassWd">

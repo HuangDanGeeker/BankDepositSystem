@@ -2,10 +2,12 @@ package com.dao;
 
 import com.bean.Staff;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 /**
  * Created by HuangDanGeeker on 2018/3/16.
  */
+@Repository
 public interface IStaffDAO {
 
     // 插入员工信息
