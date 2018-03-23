@@ -19,9 +19,14 @@ public class CustomerService {
     private ICustomerDAO customerDAO;
 
 
-    public boolean cheakCustomer(Integer custmNo, String custmPasswd){
+    public boolean cheakCustomer(String custmNo, String custmPasswd){
 
         return (null == customerDAO.queryCustomer(custmNo, custmPasswd, null));
+
+    }
+    public boolean cheakCustomer(String custmNo, String custmPasswd, String custmName){
+
+        return (null == customerDAO.queryCustomer(custmNo, custmPasswd, custmName));
 
     }
 
@@ -35,7 +40,16 @@ public class CustomerService {
     }
 
 
+    public boolean regist(String name, Integer no, String passwd, String birthday, String phone, String address){
 
+        customerDAO.insertCustomer(name, no, passwd, birthday, phone, address);
+
+        return true;
+    }
+
+    public Integer generateNo(){
+        return customerDAO.generateNo();
+    }
 
 
 }

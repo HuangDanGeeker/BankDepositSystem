@@ -59,5 +59,9 @@
     <update id="updatePassWd" parameterMap="com.bean.Customer">
         UPDATE customer set passwd=#{customer.passwd} WHERE no=#{customer.no}
     </update>
+
+    <select id="generateNo" resultType="java.lang.Integer">
+        select MAX(no)+1 from customer
+    </select>
     
 </mapper>

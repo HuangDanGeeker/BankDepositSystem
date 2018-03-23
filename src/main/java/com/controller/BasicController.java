@@ -1,9 +1,14 @@
 package com.controller;
 
+import com.service.CommonService;
+import com.service.CustomerService;
+import com.service.StaffService;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.annotation.Resource;
 import javax.websocket.server.PathParam;
 import java.util.HashMap;
 import java.util.Map;
@@ -16,6 +21,15 @@ import org.apache.log4j.Logger;
 public class BasicController {
 
     private static Logger logger = Logger.getLogger(BasicController.class);
+
+    @Resource
+    private CommonService commonService;
+    @Resource
+    private CustomerService customerService;
+    @Resource
+    private StaffService staffService;
+
+
 
     @RequestMapping("/basic")
     public String basic(){
@@ -36,10 +50,20 @@ public class BasicController {
         System.out.println("userPasswd " + userPasswd);
         // return cookie as 'remember me ' request
         Map result = new HashMap<String, String>();
-        result.put("loginStatus", "success");
-        result.put("loginRole", "staff");
-        result.put("userName", userName);
-        result.put("userNo", userNo);
+        if(customerService.cheakCustomer(userName, userPasswd, userPasswd)){
+            result.put("loginStatus", "success");
+            result.put("loginRole", "custm");
+            result.put("userName", userName);
+            result.put("userNo", userNo);
+            return result;
+        }else if (staffService.checkStaff(userName, userPasswd, userPasswd)){
+            result.put("loginStatus", "success");
+            result.put("loginRole", "staff");
+            result.put("userName", userName);
+            result.put("userNo", userNo);
+            return result;
+        }
+        result.put("loginStatus", "failed");
         return result;
     }
 
@@ -53,7 +77,11 @@ public class BasicController {
         System.out.println("registBirthday " + registBirthday);
         System.out.println("registPhone " + registPhone);
         System.out.println("registAddress " + registAddress);
-
+        if(registRole.equalsIgnoreCase("custm")){
+            customerService.regist(registName, customerService.generateNo(), registPasswd, registBirthday, registPhone, registAddress);
+        }else if(registRole.equalsIgnoreCase("staff")){
+            staffService.regist(registName, staffService.generateNo(), registPasswd, registBirthday, registPhone);
+        }
         Map result = new HashMap<String, String>();
         result.put("registStatus", "success");
         return result;

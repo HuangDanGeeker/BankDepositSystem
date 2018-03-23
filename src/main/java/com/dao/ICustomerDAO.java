@@ -14,8 +14,7 @@ import java.util.List;
 public interface ICustomerDAO {
 
     // 插入客户
-    void insertCustomer(@Param("name") String name, @Param("no") Integer no, @Param("passwd") Integer passwd, @Param("birthday") Integer birthday, @Param("phone") String phone, @Param("address") String address);
-    void insertCustomer(@Param("customer")Customer customer);
+    void insertCustomer(@Param("name") String name, @Param("no") Integer no, @Param("passwd") String passwd, @Param("birthday") String birthday, @Param("phone") String phone, @Param("address") String address);
 
     // 更新客户
     void updateCustomer(@Param("name") String name, @Param("no") Integer no, @Param("passwd") Integer passwd, @Param("birthday") Integer birthday, @Param("phone") String phone, @Param("address") String address);
@@ -26,7 +25,7 @@ public interface ICustomerDAO {
     void deleteCustomer(@Param("customer")Customer customer);
 
     // 查询客户
-    List<Customer> queryCustomer(@Param("no") Integer no, @Param("passwd") String custmPasswd, @Param("name") String name);
+    List<Customer> queryCustomer(@Param("no") String no, @Param("passwd") String custmPasswd, @Param("name") String name);
 
     // 查询密码
     Integer queryPassWd(@Param("no") String no, @Param("passwd") Integer passwd);
@@ -37,4 +36,6 @@ public interface ICustomerDAO {
     Integer updatePassWd(@Param("customer") Customer customer);
 
 
+    //产生账号
+    Integer generateNo();
 }

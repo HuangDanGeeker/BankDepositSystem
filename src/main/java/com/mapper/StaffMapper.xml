@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.dao.IStaffDAO">
-    <resultMap id="Staff" operType="com.bean.Staff">
+    <resultMap id="Staff" type="com.bean.Staff">
         <result column="name" property="name"  jdbcType="VARCHAR" />
         <result column="no" property="no"  jdbcType="VARCHAR" />
         <result column="passwd" property="passwd"  jdbcType="INT" />
@@ -38,6 +38,20 @@
     <select id="queryPassWd"  parameterMap="com.bean.Staff" resultType="java.lang.String">
         SELECT passwd FROM staff WHERE no=#{staff.no}
     </select>
+    <select id="checkStaff" resultType="java.lang.Boolean">
+        SELECT no FROM staff
+        <where>
+            <if test="no != null">
+                no = #{no}
+            </if>
+            <if test="name != null">
+                and name = #{name}
+            </if>
+            <if test="passwd != null">
+                and passwd = #{passwd}
+            </if>
+        </where>
+    </select>
 
     <update id="updatePassWd">
         UPDATE staff set passwd=#{passwd} WHERE no=#{no}
@@ -45,4 +59,7 @@
     <update id="updatePassWd" parameterMap="com.bean.Staff">
         UPDATE staff set passwd=#{staff.passwd} WHERE no=#{staff.no}
     </update>
+    <select id="generateNo" resultType="java.lang.Integer">
+        select MAX(no)+1 from customer
+    </select>
 </mapper>
