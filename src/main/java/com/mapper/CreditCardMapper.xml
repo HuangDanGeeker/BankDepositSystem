@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.ICreditCardDAO">
+
+    <insert id="createCreditCard">
+        INSERT INTO creditcard_#{custmNo} VALUES (#{cardNo}, 0, CURRENTDATE(),);
+    </insert>
+    <insert id="deposit">
+        UPDATE creditcard_#{custmNo} SET nums=${nums}, dueTime=${dueTime}
+    </insert>
+</mapper>
