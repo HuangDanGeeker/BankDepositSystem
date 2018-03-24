@@ -26,7 +26,8 @@ public class CustomerService {
     }
     public boolean cheakCustomer(String custmNo, String custmPasswd, String custmName){
 
-        return (null == customerDAO.queryCustomer(custmNo, custmPasswd, custmName));
+        List<Customer> customerList = customerDAO.queryCustomer(custmNo, custmPasswd, custmName);
+        return (0 != customerList.size());
 
     }
 
@@ -48,7 +49,7 @@ public class CustomerService {
     }
 
     public Integer generateNo(){
-        return customerDAO.generateNo();
+        return Integer.valueOf(customerDAO.generateNo()) + 1;
     }
 
 

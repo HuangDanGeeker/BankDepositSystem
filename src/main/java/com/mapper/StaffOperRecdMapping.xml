@@ -3,11 +3,11 @@
 <mapper namespace="com.dao.IStaffOperRecdDAO">
     <resultMap id="StaffOperRecord" type="com.bean.StaffOperRecord">
         <result column="no" property="no" jdbcType="VARCHAR"/>
-        <result column="operType" property="operType" jdbcType="INT"/>
+        <result column="operType" property="operType" jdbcType="INTEGER"/>
         <result column="custmNo" property="custmNo" jdbcType="VARCHAR"/>
         <result column="custmName" property="custmName" jdbcType="VARCHAR"/>
-        <result column="nums" property="nums" jdbcType="INT"/>
-        <result column="operDate" property="operDate" jdbcType="Date"/>
+        <result column="nums" property="nums" jdbcType="INTEGER"/>
+        <result column="operDate" property="operDate" jdbcType="DATE"/>
     </resultMap>
 
     <!--查询记录-->

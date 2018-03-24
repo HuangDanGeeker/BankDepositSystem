@@ -43,13 +43,13 @@ public class BasicController {
         System.out.println("userPasswd " + userPasswd);
         // return cookie as 'remember me ' request
         Map result = new HashMap<String, String>();
-        if(customerService.cheakCustomer(userName, userPasswd, userPasswd)){
+        if(customerService.cheakCustomer(userNo, userPasswd, userName)){
             result.put("loginStatus", "success");
             result.put("loginRole", "custm");
             result.put("userName", userName);
             result.put("userNo", userNo);
             return result;
-        }else if (staffService.checkStaff(userName, userPasswd, userPasswd)){
+        }else if (staffService.checkStaff(userNo, userPasswd, userName)){
             result.put("loginStatus", "success");
             result.put("loginRole", "staff");
             result.put("userName", userName);

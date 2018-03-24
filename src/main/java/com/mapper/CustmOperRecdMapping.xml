@@ -3,26 +3,17 @@
 <mapper namespace="com.dao.ICustmOperRecdDAO">
     <resultMap id="CustmOperRecord" type="com.bean.CustmOperRecord">
         <result column="no" property="no" jdbcType="VARCHAR"/>
-        <result column="operType" property="operType" jdbcType="INT"/>
+        <result column="operType" property="operType" jdbcType="INTEGER"/>
         <result column="dealerNo" property="dealerNo" jdbcType="VARCHAR"/>
         <result column="dealerName" property="dealerName" jdbcType="VARCHAR"/>
-        <result column="nums" property="nums" jdbcType="INT"/>
-        <result column="operDate" property="operDate" jdbcType="date"/>
+        <result column="nums" property="nums" jdbcType="INTEGER"/>
+        <result column="operDate" property="operDate" jdbcType="DATE"/>
     </resultMap>
 
     <!--查询记录-->
-    <select id="queryRecord" parameterType="java.lang.String" resultMap="CustmOperRecord">
-        SELECT * FROM recd_custm_${no}
-    </select>
-    <select id="queryRecordByType" parameterType="java.lang.String, java.lang.Integer" resultMap="CustmOperRecord">
-        SELECT * FROM recd_custm_${no} where operType=#{operType}
-    </select>
-    <select id="queryRecordByDate" parameterType="java.lang.String, java.sql.Date, java.sql.Date" resultMap="CustmOperRecord">
-        SELECT * FROM recd_custm_${no} where operType=#{operType} and operDate <= #{endDate} and operDate >= #{startDate}
-    </select>
-    <select id="queryRecordByBoth" parameterType="java.lang.String, java.lang.Integer, java.sql.Date, java.sql.Date" resultMap="CustmOperRecord">
-        SELECT * FROM recd_custm_${no} where operType=#{operType} and operDate <= #{endDate} and operDate >= #{startDate}
-    </select>
+    <!--<select id="queryRecordByBoth">-->
+        <!--SELECT * FROM recd_custm_${no} where operType=#{operType} and operDate <= #{endDate} and operDate >= #{startDate}-->
+    <!--</select>-->
 
     <!--插入记录-->
     <insert id="insertRecord" parameterMap="com.bean.CustmOperRecord">

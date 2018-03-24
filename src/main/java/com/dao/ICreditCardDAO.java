@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 /**
  * Created by HuangDanGeeker on 2018/3/23.
  */
+@Repository
 public interface ICreditCardDAO {
 
     //创建客户信用卡账号

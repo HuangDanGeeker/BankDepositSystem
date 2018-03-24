@@ -2,6 +2,7 @@ package com.dao;
 
 import com.bean.CustmOperRecord;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.sql.Date;
 
@@ -9,6 +10,7 @@ import java.sql.Date;
  * Created by HuangDanGeeker on 2018/3/16.
  * 用户操作记录DAO
  */
+@Repository
 public interface ICustmOperRecdDAO {
 
     //查询记录

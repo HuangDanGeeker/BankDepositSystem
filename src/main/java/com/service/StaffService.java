@@ -1,9 +1,11 @@
 package com.service;
 
+import com.bean.Staff;
 import com.dao.IStaffDAO;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * Created by HuangDanGeeker on 2018/3/23.
@@ -15,7 +17,8 @@ public class StaffService
     private IStaffDAO staffDAO;
 
     public boolean checkStaff(String custmNo, String custmPasswd, String custmName){
-        return staffDAO.checkStaff(custmNo, custmPasswd, custmName);
+        List<Staff> staffList = staffDAO.checkStaff(custmName, custmNo, custmPasswd);
+        return (0 != staffList.size());
     }
 
     public boolean regist(String name, Integer no, String passwd, String birthday, String phone){
@@ -27,6 +30,6 @@ public class StaffService
 
 
     public Integer generateNo(){
-        return staffDAO.generateNo();
+        return Integer.valueOf(staffDAO.generateNo())+1;
     }
 }

@@ -34,5 +34,5 @@ public interface ICustomerDAO {
     Integer updatePassWd(@Param("no") String no, @Param("passwd") Integer passwd);
 
     //产生账号
-    Integer generateNo();
+    String generateNo();
 }

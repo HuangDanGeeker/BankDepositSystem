@@ -6,8 +6,8 @@ package com.bean;
 public class Customer {
     public String name;
     public String no;
-    public Integer passwd;
-    public Integer birthday;
+    public int passwd;
+    public int birthday;
     public String  phone;
     public String address;
 
