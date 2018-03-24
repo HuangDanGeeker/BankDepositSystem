@@ -166,7 +166,7 @@ function fillCustmInfomation(param) {
         success:function(){},
         error:function(XMLHttpRequest, textStatus, errorThrown) {
             if(XMLHttpRequest.status != 200){
-                //TODO
+                $('#infoModal').modal('show');
                 return;
             }
             var result = eval("("+XMLHttpRequest.responseText+")");
@@ -189,7 +189,7 @@ function generateCreditNum() {
         success:function(){},
         error:function(XMLHttpRequest, textStatus, errorThrown) {
             if(XMLHttpRequest.status != 200){
-                //TODO
+                $('#infoModal').modal('show');
                 return;
             }
             $('#createCustomerPanel #creditCardNum').val(XMLHttpRequest.responseText);
