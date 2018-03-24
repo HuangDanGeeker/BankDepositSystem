@@ -121,6 +121,9 @@ function checkUserName(param){
     var userName = param.currentTarget.value;
     var parent = $(param.currentTarget).parentsUntil('#operatePanel')[3];
     var custmNoSelect = $(parent).find('#custmNo')[0];
+    if(userName == ""){
+        return;
+    }
     $.ajax({
         url:"http://localhost:8080/BankDepositSystem/checkUser/" + userName,
         dataType:'jsonp',
