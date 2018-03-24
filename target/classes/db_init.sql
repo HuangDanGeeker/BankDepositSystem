@@ -22,4 +22,4 @@ INSERT INTO staff VALUES ('1', 1, 1, 970101, 18373151462);
 
 -- 2.插入客户
 INSERT INTO customer VALUES ('HuangDan', 0902150228, 111111, 970101, 18373151462, '中南大学-升华公寓');
-INSERT INTO customer VALUES ('1', 1, 1, 970101, 18373151462, '中南大学-升华公寓');
+INSERT INTO customer VALUES ('2', 4, 1, '2011-11-11', 18373151462, '中南大学-升华公寓');

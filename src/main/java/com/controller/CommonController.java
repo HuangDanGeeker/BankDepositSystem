@@ -1,7 +1,10 @@
 package com.controller;
 
+import com.bean.Customer;
 import com.bean.StaffOperRecord;
 import com.service.CustomerService;
+import com.sun.tracing.dtrace.ProviderAttributes;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,6 +33,20 @@ public class CommonController {
         Map<String, Object> result = new HashMap<String, Object>();
         List<String> list = customerService.checkCustomer(userName);
         result.put("resultList", list);
+        result.put("count", list.size());
+        return result;
+    }
+
+    @RequestMapping("/checkUser/{userName}/{userNo}")
+    @ResponseBody
+    public Map<String, Object> checkUserWithUserNo(@PathVariable String userName, @PathVariable("userNo") String userNo){
+        System.out.println("checkUserWithUserNo");
+        System.out.println("userName " + userName);
+        System.out.println("userNo " + userNo);
+        Map<String, Object> result = new HashMap<String, Object>();
+        List<Customer> list = customerService.queryCustomer(userNo, userName);
+        // we assume that it always get one and only one result
+        result.put("custm", list.get(0).reFormat());
         result.put("count", list.size());
         return result;
     }

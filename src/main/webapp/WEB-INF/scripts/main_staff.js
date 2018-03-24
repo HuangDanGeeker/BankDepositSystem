@@ -13,9 +13,12 @@ window.onload = function () {
     //TODO
     // ${'#custmName').oninputt 提供用户账号提示功能
 
-    $('#createCustomerPanel #custmName').bind('input', function(param){checkUserName(param);});
-    $('#anyTimeDealPanel #custmName').bind('input', function(param){checkUserName(param);});
-    $('#scheduleDealPanel #custmName').bind('input', function(param){checkUserName(param);});
+    //绑定--动态按照用户名返回用户账号List
+    $('#createCustomerPanel #custmName').bind('input', function(param){checkCustmName(param);});
+    $('#anyTimeDealPanel #custmName').bind('input', function(param){checkCustmName(param);});
+    $('#scheduleDealPanel #custmName').bind('input', function(param){checkCustmName(param);});
+    //绑定--按照选择的用户账号返回用户的详细信息
+    $('#createCustomerPanel #custmNo').change(function(param){fillCustmInfomation(param);});
 }
 
 
@@ -116,7 +119,7 @@ function submitSpecificDeposit() {
         }});
 }
 
-function checkUserName(param){
+function checkCustmName(param){
 
     var userName = param.currentTarget.value;
     var parent = $(param.currentTarget).parentsUntil('#operatePanel')[3];
@@ -146,24 +149,32 @@ function checkUserName(param){
     });
 }
 
-function queryCustmNo(param){
 
+function fillCustmInfomation(param) {
+
+    var parent = $(param.currentTarget).parentsUntil('#operatePanel')[3];
+    var userNameInput = $(parent).find('#custmName')[0];
+    var userNo = $(param.currentTarget).val();
+    var userName = $(userNameInput).val();
+    console.log("userName " + userName);
+    console.log("userNo " + userNo);
     $.ajax({
-        url:"http://localhost:8080/BankDepositSystem/staff/queryCustmNo",
+        url:"http://localhost:8080/BankDepositSystem/checkUser/"+userName+"/"+userNo,
         dataType:'jsonp',
         processData: true,
         type:'put',
         success:function(){},
         error:function(XMLHttpRequest, textStatus, errorThrown) {
-            if(XMLHttpRequest.status != 200) {
-                alert("网络连接错误,请刷新重试");
+            if(XMLHttpRequest.status != 200){
+                //TODO
                 return;
             }
-            $("#createCustomerPanel #creditCardNum").val(XMLHttpRequest.responseText);
-
+            var result = eval("("+XMLHttpRequest.responseText+")");
+            console.log(result);
+            $('#createCustomerPanel #custmBirthday').val(result.custm['birthday']);
+            $('#createCustomerPanel #custmPhone').val(result.custm['phone']);
+            $('#createCustomerPanel #custmAddress').val(result.custm['address']);
         }
     });
+
 }
-
-
-

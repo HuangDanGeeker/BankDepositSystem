@@ -19,9 +19,10 @@ public class CustomerService {
     ICustomerDAO customerDAO;
 
 
-    public boolean cheakCustomer(String custmNo, String custmPasswd){
+    public List<Customer> queryCustomer(String custmNo, String custmName){
+       List<Customer> customerList = customerDAO.queryCustomer(custmNo, null, custmName);
+       return customerList;
 
-        return (null == customerDAO.queryCustomer(custmNo, custmPasswd, null));
 
     }
     public boolean cheakCustomer(String custmNo, String custmPasswd, String custmName){

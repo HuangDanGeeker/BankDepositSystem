@@ -7,7 +7,7 @@ public class Customer {
     public String name;
     public String no;
     public int passwd;
-    public int birthday;
+    public String birthday;
     public String  phone;
     public String address;
 
@@ -36,11 +36,11 @@ public class Customer {
         this.passwd = passwd;
     }
 
-    public Integer getBirthday() {
+    public String getBirthday() {
         return birthday;
     }
 
-    public void setBirthday(Integer birthday) {
+    public void setBirthday(String birthday) {
         this.birthday = birthday;
     }
 
@@ -60,6 +60,10 @@ public class Customer {
         this.address = address;
     }
 
-
+    public Customer reFormat(){
+        birthday = birthday.substring(0,4)+"-"+birthday.substring(4,6)+"-"+birthday.substring(6);
+        System.out.println(birthday);
+        return this;
+    }
 
 }
