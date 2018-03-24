@@ -41,12 +41,19 @@ public class SttafOperationController {
         result.put("status", "success");
         return result;
     }
+
     @RequestMapping("/queryCustmNo")
     @ResponseBody
     public String queryCustmNo(){
         System.out.println("queryCustmNo");
         return String.valueOf(customerService.generateNo());
 
+    }
+    @RequestMapping("/generateCreditCardNo")
+    @ResponseBody
+    public String generateCreditCardNo(){
+        System.out.println("generateCreditCardNo");
+        return creditCardService.generateCreditCardNo();
     }
 
     @RequestMapping("/deposit/{custmNo}/{creditCardNum}/{nums}/{type}/{dueTime}")

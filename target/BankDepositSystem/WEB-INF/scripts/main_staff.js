@@ -178,3 +178,22 @@ function fillCustmInfomation(param) {
     });
 
 }
+
+function generateCreditNum() {
+
+    $.ajax({
+        url:"http://localhost:8080/BankDepositSystem/staff/generateCreditCardNo",
+        dataType:'jsonp',
+        processData: true,
+        type:'put',
+        success:function(){},
+        error:function(XMLHttpRequest, textStatus, errorThrown) {
+            if(XMLHttpRequest.status != 200){
+                //TODO
+                return;
+            }
+            $('#createCustomerPanel #creditCardNum').val(XMLHttpRequest.responseText);
+        }
+    });
+
+}

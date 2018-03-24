@@ -22,4 +22,15 @@ public class CreditAccountService {
         creditCardDAO.deposit(custmNo, creditCardNo, nums, dutTime);
     }
 
+    // 生成信用卡号
+    public String generateCreditCardNo(){
+
+        String num = creditCardDAO.getCreditCardNo();
+        String newNum = String.valueOf(Integer.valueOf(num) + 1);
+        creditCardDAO.addCreditCardNo(newNum);
+        return num;
+    }
+
+
+
 }
