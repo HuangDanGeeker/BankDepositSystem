@@ -1,15 +1,11 @@
 package com.controller;
 
-import com.service.CommonService;
 import com.service.CustomerService;
 import com.service.StaffService;
 import org.springframework.stereotype.Controller;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
-import javax.websocket.server.PathParam;
 import java.util.HashMap;
 import java.util.Map;
 import org.apache.log4j.Logger;
@@ -17,13 +13,10 @@ import org.apache.log4j.Logger;
  * Created by HuangDanGeeker on 2018/3/15.
  * Basic controller for test
  */
+
 @Controller
 public class BasicController {
 
-    private static Logger logger = Logger.getLogger(BasicController.class);
-
-    @Resource
-    private CommonService commonService;
     @Resource
     private CustomerService customerService;
     @Resource

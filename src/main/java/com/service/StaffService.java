@@ -8,7 +8,7 @@ import javax.annotation.Resource;
 /**
  * Created by HuangDanGeeker on 2018/3/23.
  */
-@Service
+@Service("staffService")
 public class StaffService
 {
     @Resource

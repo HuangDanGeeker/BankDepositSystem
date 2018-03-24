@@ -142,3 +142,24 @@ function checkUserName(param){
     });
 }
 
+function queryCustmNo(param){
+
+    $.ajax({
+        url:"http://localhost:8080/BankDepositSystem/staff/queryCustmNo",
+        dataType:'jsonp',
+        processData: true,
+        type:'put',
+        success:function(){},
+        error:function(XMLHttpRequest, textStatus, errorThrown) {
+            if(XMLHttpRequest.status != 200) {
+                alert("网络连接错误,请刷新重试");
+                return;
+            }
+            $("#createCustomerPanel #creditCardNum").val(XMLHttpRequest.responseText);
+
+        }
+    });
+}
+
+
+

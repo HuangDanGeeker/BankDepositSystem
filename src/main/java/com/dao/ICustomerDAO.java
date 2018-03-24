@@ -29,12 +29,9 @@ public interface ICustomerDAO {
 
     // 查询密码
     Integer queryPassWd(@Param("no") String no, @Param("passwd") Integer passwd);
-    Integer queryPassWd(@Param("customer") Customer customer);
 
     // 修改密码
     Integer updatePassWd(@Param("no") String no, @Param("passwd") Integer passwd);
-    Integer updatePassWd(@Param("customer") Customer customer);
-
 
     //产生账号
     Integer generateNo();

@@ -12,11 +12,11 @@ import java.util.stream.Collectors;
  * Created by HuangDanGeeker on 2018/3/22.
  */
 
-@Service
+@Service("customerService")
 public class CustomerService {
 
     @Resource
-    private ICustomerDAO customerDAO;
+    ICustomerDAO customerDAO;
 
 
     public boolean cheakCustomer(String custmNo, String custmPasswd){

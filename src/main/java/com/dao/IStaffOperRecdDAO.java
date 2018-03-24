@@ -10,7 +10,6 @@ import java.sql.Date;
  * Created by HuangDanGeeker on 2018/3/16.
  * 柜员操作记录DAO
  */
-@Repository
 public interface IStaffOperRecdDAO {
 
     //查询记录

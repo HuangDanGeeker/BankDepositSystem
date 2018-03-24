@@ -57,16 +57,16 @@
         <property name="maxWait" value="${maxWait}"></property>
     </bean>
 
-    <!--&lt;!&ndash;配置Mybaits Mapper文件位置&ndash;&gt;-->
-    <!--<bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">-->
-        <!--<property name="dataSource" ref="dataSource"/>-->
-        <!--<property name="mapperLocations" value="classpath:com/mapper/*.xml"></property>-->
-    <!--</bean>-->
+    <!--配置Mybaits Mapper文件位置-->
+    <bean id="sessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mapperLocations" value="classpath*:com/mapper/*.xml"></property>
+    </bean>
 
-    <!--<bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">-->
-        <!--<property name="basePackage" value="com.bean,com.dao"></property>-->
-        <!--<property name="sqlSessionFactoryBeanName" value="sessionFactory"></property>-->
-    <!--</bean>-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="basePackage" value="com.bean,com.dao"></property>
+        <property name="sqlSessionFactoryBeanName" value="sessionFactory"></property>
+    </bean>
 
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"></property>
