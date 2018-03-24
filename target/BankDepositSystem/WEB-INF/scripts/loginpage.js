@@ -24,17 +24,17 @@ function login() {
             var loginResult = eval("("+XMLHttpRequest.responseText+")");
             if(loginResult.loginStatus == 'success'){  //登录成功
                 $.cookie("userName", userName);
+                $.cookie("userName", loginResult.userName);
+                $.cookie("userNo", loginResult.userNo);
                 if(loginResult.loginRole == 'staff'){
-                    $.cookie("loginRole", "Staff");
-                    $.cookie("userName", loginResult.userName);
-                    $.cookie("userNo", loginResult.userNo);
+                    $.cookie("loginRole", "staff");
                     window.location.href = "http://localhost:8080/BankDepositSystem/main/staff";
                 }else{
-                    $.cookie("loginRole", "Custm");
+                    $.cookie("loginRole", "custm");
                     window.location.href = "http://localhost:8080/BankDepositSystem/main/custm";
                 }
-            }else{  //TODO 登录失败
-
+            }else{  //登录失败
+                $('#loginModal').modal('show');
             }
         }});
 }
