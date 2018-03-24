@@ -132,13 +132,14 @@ function checkUserName(param){
         success:function(){},
         error:function(XMLHttpRequest, textStatus, errorThrown) {
             var result = eval("("+XMLHttpRequest.responseText+")");
+            var info = $(parent).find('#info')[0];
             $(custmNoSelect).empty();
             if(result.count != 0){
                 for(var i = 0; i < result.resultList.length; i++){
                     $(custmNoSelect).append("<option>"+result.resultList[i]+"</option>>")
                 }
+                $(info).text("");
             }else{
-                var info = $(parent).find('#info')[0];
                 $(info).text("NO UserNo");
             }
         }
