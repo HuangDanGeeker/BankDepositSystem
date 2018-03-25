@@ -15,6 +15,8 @@ create TABLE recd_staff_0902150228(no VARCHAR(20) PRIMARY KEY, operType INT, cus
 create TABLE  creditcard_0902150228(cardNo VARCHAR(20) PRIMARY KEY NOT NULL , nums INT DEFAULT 0, dutTime DATE);
 -- 6.创建信用卡号&&账号集(存储最新创建的账号和信用卡账号)
 create TABLE  num_set(no VARCHAR(20) PRIMARY KEY, type INT DEFAULT 0);
+-- 7.创建存储利率表
+create TABLE  rate_table(type VARCHAR(20) PRIMARY KEY, rate FLOAT DEFAULT 0);
 -- 数据操作
 -- 1.插入员工
 INSERT INTO staff VALUES ('HuangDan', 0902150228, 111111, 970101, 18373151462);

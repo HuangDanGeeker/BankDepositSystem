@@ -11,8 +11,17 @@
     </resultMap>
 
     <!--查询记录-->
+    <!--TODO  and operDate <= #{endDate} and operDate >= #{startDate}-->
     <select id="queryRecord" >
-        <!--SELECT * FROM recd_staff_${no} where operType=#{operType} and operDate <= #{endDate} and operDate >= #{startDate}-->
+        SELECT * FROM recd_staff_${no}
+        <where>
+            <if test="no != null">
+                no = #{no}
+            </if>
+            <if test="operType != null">
+                operType=#{operType}
+            </if>
+        </where>
     </select>
 
     <!--添加纪录-->

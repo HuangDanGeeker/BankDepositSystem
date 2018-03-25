@@ -1,10 +1,13 @@
 package com.service;
 
+import com.bean.CreditCard;
 import com.dao.ICreditCardDAO;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.time.LocalDate;
+import java.util.List;
 
 /**
  * Created by HuangDanGeeker on 2018/3/23.
@@ -30,6 +33,10 @@ public class CreditAccountService {
         String newNum = String.valueOf(Integer.valueOf(num) + 1);
         creditCardDAO.addCreditCardNo(newNum);
         return num;
+    }
+
+    public List<CreditCard> queryCreditCardRecord(String custmNo){
+        return creditCardDAO.queryCreditCardRecord(custmNo);
     }
 
 

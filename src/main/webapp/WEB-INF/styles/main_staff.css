@@ -92,3 +92,7 @@
     float: left;
     margin-left:2%;
 }
+
+#accountDetailPanel {
+    font-size: 14px;
+}

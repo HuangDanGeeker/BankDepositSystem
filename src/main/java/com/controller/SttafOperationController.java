@@ -1,8 +1,11 @@
 package com.controller;
 
+import com.bean.CreditCard;
+import com.bean.StaffOperRecord;
 import com.service.CreditAccountService;
 import com.service.CustomerService;
 import com.service.StaffOperationService;
+import com.service.StaffService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,6 +14,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.annotation.Resource;
 import java.time.LocalDate;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -27,6 +31,8 @@ public class SttafOperationController {
     private CreditAccountService creditCardService;
     @Resource
     private CustomerService customerService;
+    @Resource
+    private StaffService staffService;
 
     @RequestMapping("/createcreditcard/{custmNo}/{cardNo}")
     @ResponseBody
@@ -111,6 +117,48 @@ public class SttafOperationController {
             return false;
         }
         return true;
+    }
+
+
+    @RequestMapping("/queryCustmIntrest/{custmNo}")
+    @ResponseBody
+    public Map<String, Object> queryCustmIntrest(@PathVariable("custmNo") String custmNo){
+        System.out.println("queryCustmIntrest");
+        System.out.println("custmNo " + custmNo);
+        Map<String, Object> result = new HashMap<>(5,5);
+        //检查用户账号存在情况
+        if(!customerService.checkCustomer(custmNo)){
+            result.put("status", "error");
+            result.put("reason", "the custmNo is invalid");
+            return result;
+        }
+
+        List<CreditCard> list = creditCardService.queryCreditCardRecord(custmNo);
+        result.put("status", "success");
+        result.put("list", list);
+        result.put("count", list.size());
+        return result;
+
+    }
+
+    @RequestMapping("/queryStaffOperRecord/{staffNo}")
+    @ResponseBody
+    public Map<String, Object> queryStaffOperRecord(@PathVariable("staffNo") String staffNo){
+        System.out.println("queryCustmIntrest");
+        System.out.println("staffNo " + staffNo);
+        Map<String, Object> result = new HashMap<>(5,5);
+        //检查用户账号存在情况
+        if(!staffService.checkStaff(staffNo)){
+            result.put("status", "error");
+            result.put("reason", "the staffNo is invalid");
+            return result;
+        }
+        List<StaffOperRecord> list = staffOperationService.queryRecord(staffNo);
+        result.put("status", "success");
+        result.put("list", list);
+        result.put("count", list.size());
+        return result;
+
     }
 
 }

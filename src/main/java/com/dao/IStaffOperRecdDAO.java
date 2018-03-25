@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.sql.Date;
+import java.util.List;
 
 /**
  * Created by HuangDanGeeker on 2018/3/16.
@@ -14,7 +15,8 @@ import java.sql.Date;
 public interface IStaffOperRecdDAO {
 
     //查询记录
-    StaffOperRecord[] queryRecordByBoth(@Param("no") String no, @Param("operType") Integer type, @Param("startDate")Date startDate, @Param("endDate") Date endDate);
+    //TODO , @Param("startDate")Date startDate, @Param("endDate") Date endDate
+    List<StaffOperRecord> queryRecord(@Param("no") String no, @Param("operType") Integer type);
 
     //添加纪录
     void insertRecord(@Param("record") StaffOperRecord record);

@@ -1,17 +1,13 @@
 package com.controller;
 
 import com.bean.Customer;
-import com.bean.StaffOperRecord;
 import com.service.CustomerService;
-import com.sun.tracing.dtrace.ProviderAttributes;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -31,7 +27,7 @@ public class CommonController {
     public Map<String, Object> checkUser(@PathVariable String userName){
         System.out.println("checkUser");
         Map<String, Object> result = new HashMap<String, Object>();
-        List<String> list = customerService.checkCustomer(userName);
+        List<String> list = customerService.checkCustomerNo(userName);
         result.put("resultList", list);
         result.put("count", list.size());
         return result;

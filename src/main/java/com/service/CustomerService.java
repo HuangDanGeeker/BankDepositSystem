@@ -19,13 +19,19 @@ public class CustomerService {
     ICustomerDAO customerDAO;
 
 
+
     public List<Customer> queryCustomer(String custmNo, String custmName){
        List<Customer> customerList = customerDAO.queryCustomer(custmNo, null, custmName);
        return customerList;
+    }
 
+    public boolean checkCustomer(String custmNo){
+
+        List<Customer> customerList = customerDAO.queryCustomer(custmNo, null, null);
+        return (0 != customerList.size());
 
     }
-    public boolean cheakCustomer(String custmNo, String custmPasswd, String custmName){
+    public boolean checkCustomer(String custmNo, String custmPasswd, String custmName){
 
         List<Customer> customerList = customerDAO.queryCustomer(custmNo, custmPasswd, custmName);
         return (0 != customerList.size());
@@ -33,7 +39,7 @@ public class CustomerService {
     }
 
 
-    public List<String> checkCustomer(String custmName){
+    public List<String> checkCustomerNo(String custmName){
 
         List<Customer> result = customerDAO.queryCustomer(null, null, custmName);
 

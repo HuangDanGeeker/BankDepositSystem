@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import java.util.HashMap;
 import java.util.Map;
-import org.apache.log4j.Logger;
+
 /**
  * Created by HuangDanGeeker on 2018/3/15.
  * Basic controller for test
@@ -43,7 +43,7 @@ public class BasicController {
         System.out.println("userPasswd " + userPasswd);
         // return cookie as 'remember me ' request
         Map result = new HashMap<String, String>();
-        if(customerService.cheakCustomer(userNo, userPasswd, userName)){
+        if(customerService.checkCustomer(userNo, userPasswd, userName)){
             result.put("loginStatus", "success");
             result.put("loginRole", "custm");
             result.put("userName", userName);

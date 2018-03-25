@@ -1,7 +1,10 @@
 package com.dao;
 
+import com.bean.CreditCard;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * Created by HuangDanGeeker on 2018/3/23.
@@ -22,4 +25,6 @@ public interface ICreditCardDAO {
     String getCreditCardNo();
     //更新最近产生的信用卡号
     void addCreditCardNo(@Param("newNum") String newNum);
+
+    List<CreditCard> queryCreditCardRecord(@Param("cardNo") String no);
 }

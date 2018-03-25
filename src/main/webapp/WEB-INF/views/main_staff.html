@@ -179,32 +179,66 @@
                 </form>
             </div>
            <div id="accountDetailPanel">
-               <table class="table table-striped table-bordered">
+               <div class="btn-group" data-toggle="buttons">
+                   <label class="btn btn-primary" id="staffHistoryRadio">
+                       <input type="radio" > 操作历史
+                   </label>
+                   <label class="btn btn-primary" id="custmHistoryRadio">
+                       <input type="radio" > 客户操作历史
+                   </label>
+               </div>
+               <br>
+               <br>
+               <div id="staffHistoryPanel" class="row" style="display: none;">
+                   <table class="table table-striped table-bordered pre-scrollable">
+                       <thead>
+                       <tr class="text-center">
+                           <th>名称</th>
+                           <th>城市</th>
+                           <th>邮编</th>
+                       </tr>
+                       </thead>
+                       <tbody>
+                       <tr>
+                           <td>Tanmay</td>
+                           <td>Bangalore</td>
+                           <td>560001</td>
+                       </tr>
+                       <tr>
+                           <td>Sachin</td>
+                           <td>Mumbai</td>
+                           <td>400003</td>
+                       </tr>
+                       </tbody>
+                    </table>
+               </div>
+               <div id="custmHistoryPanel">
+                   <form class="form">
+                       <div class="form-group col-sm-10">
+                            <input value="0902150228" type="text" id="custmNo" class="form-control" placeholder="please input the customer's No . . ." />
+                       </div>
+                       <button type="button" class="btn btn-success" onclick="qeruyCustmOperRecrd()">查询</button>
+                   </form>
+                   <br>
+                   <table class="table table-striped table-bordered pre-scrollable">
                    <thead>
-                   <tr>
-                       <th>名称</th>
-                       <th>城市</th>
-                       <th>邮编</th>
+                   <tr class="text-center">
+                       <th>信用卡账号</th>
+                       <th>金 额</th>
+                       <th>到期时间</th>
+                       <th>利 息</th>
                    </tr>
                    </thead>
                    <tbody>
                    <tr>
-                       <td>Tanmay</td>
-                       <td>Bangalore</td>
-                       <td>560001</td>
-                   </tr>
-                   <tr>
-                       <td>Sachin</td>
-                       <td>Mumbai</td>
-                       <td>400003</td>
-                   </tr>
-                   <tr>
                        <td>Uma</td>
                        <td>Pune</td>
                        <td>411027</td>
+                       <td>411027</td>
                    </tr>
                    </tbody>
-               </table>
+               </table></div>
+
 
            </div>
         </div>

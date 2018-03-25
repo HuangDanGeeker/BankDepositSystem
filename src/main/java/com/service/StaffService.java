@@ -20,6 +20,10 @@ public class StaffService
         List<Staff> staffList = staffDAO.checkStaff(custmName, custmNo, custmPasswd);
         return (0 != staffList.size());
     }
+    public boolean checkStaff(String custmNo){
+        List<Staff> staffList = staffDAO.checkStaff(null, custmNo, null);
+        return (0 != staffList.size());
+    }
 
     public boolean regist(String name, Integer no, String passwd, String birthday, String phone){
 
