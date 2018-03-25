@@ -67,15 +67,8 @@ public class SttafOperationController {
         System.out.println("dueTime " + dueTime);
 
         //活期&&定期存储的到期时间处理
-        if(type.equals("1")){
-            LocalDate date = LocalDate.now();
-            int month = date.getMonth().getValue();
-            month = month + Integer.valueOf(dueTime);
-            int year = date.getYear() + month/12;
-            LocalDate endDate = LocalDate.of(year, (month % 12 + 1), date.getDayOfMonth());
-            System.out.println("real dueTime " + year +" "+ (month % 12 + 1) +" "+ date.getDayOfMonth());
-            String realDueTime = "";    //TODO 确定日期的格式
-            creditCardService.deposit(custmNo, creditCardNum, nums, realDueTime);
+        if(type == 1){
+            creditCardService.deposit(custmNo, creditCardNum, nums, dueTime);
         }else{
             int monthScape = 0;
             int yearScape = 0;
