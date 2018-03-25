@@ -93,8 +93,15 @@ function submitAnyTimeDeposit() {
         success:function(){},
         error:function(XMLHttpRequest, textStatus, errorThrown) {
             var result = eval("("+XMLHttpRequest.responseText+")");
-            console.log("deposit succcess");
-            console.log(result);
+            if(result.status == "success"){
+                $('#infoModal .modal-body').text("your request is executed successfully");
+                $('#infoModal .modal-title').text("Deposit Success");
+                $('#infoModal').modal('show');
+            }else{
+                $('#infoModal .modal-body').text(result.reason);
+                $('#infoModal .modal-title').text("Deposit Error");
+                $('#infoModal').modal('show');
+            }
         }
     });
 }
@@ -122,9 +129,15 @@ function submitSpecificDeposit() {
         },
         error:function(XMLHttpRequest, textStatus, errorThrown) {
             var result = eval("("+XMLHttpRequest.responseText+")");
-            console.log("deposit succcess herhe");
-            console.log(result);
-            console.log(XMLHttpRequest.responseText);
+            if(result.status == "success"){
+                $('#infoModal .modal-body').text("your request is executed successfully");
+                $('#infoModal .modal-title').text("Deposit Success");
+                $('#infoModal').modal('show');
+            }else{
+                $('#infoModal .modal-body').text(result.reason);
+                $('#infoModal .modal-title').text("Deposit Error");
+                $('#infoModal').modal('show');
+            }
         }});
 }
 
@@ -175,6 +188,8 @@ function fillCustmInfomation(param) {
         success:function(){},
         error:function(XMLHttpRequest, textStatus, errorThrown) {
             if(XMLHttpRequest.status != 200){
+                $('#infoModal .modal-body').text('连接失败<br>请检查您的网络后,尝试刷新以解决错误');
+                $('#infoModal .modal-title').text("Login Error");
                 $('#infoModal').modal('show');
                 return;
             }
@@ -198,6 +213,8 @@ function generateCreditNum() {
         success:function(){},
         error:function(XMLHttpRequest, textStatus, errorThrown) {
             if(XMLHttpRequest.status != 200){
+                $('#infoModal .modal-body').text('连接失败<br>请检查您的网络后,尝试刷新以解决错误');
+                $('#infoModal .modal-title').text("Login Error");
                 $('#infoModal').modal('show');
                 return;
             }

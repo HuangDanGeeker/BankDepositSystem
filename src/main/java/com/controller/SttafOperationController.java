@@ -65,9 +65,15 @@ public class SttafOperationController {
         System.out.println("nums " + nums);
         System.out.println("type " + type);
         System.out.println("dueTime " + dueTime);
+        Map result = new HashMap<String, String>();
 
         //活期&&定期存储的到期时间处理
         if(type == 1){
+            if(!cheackDueTime(LocalDate.parse(dueTime))){
+                result.put("status", "failure");
+                result.put("reason", "invaild Time : dueTime is prior to today");
+                return result;
+            }
             creditCardService.deposit(custmNo, creditCardNum, nums, dueTime);
         }else{
             int monthScape = 0;
@@ -84,16 +90,27 @@ public class SttafOperationController {
             month = month + monthScape;
             int year = yearScape + date.getYear() + month/12;
             LocalDate endDate = LocalDate.of(year, (month % 12 + 1), date.getDayOfMonth());
-//            System.out.println("real dueTime " + year +" "+ (month % 12 + 1) +" "+ date.getDayOfMonth());
             System.out.println(endDate.toString());
+            if(!cheackDueTime(endDate)){
+                result.put("status", "failure");
+                result.put("reason", "invaild Time : dueTime is prior to today");
+                return result;
+            }
             creditCardService.deposit(custmNo, creditCardNum, nums, endDate.toString());
         }
 
-        Map result = new HashMap<String, String>();
+
         result.put("status", "success");
         return result;
     }
 
 
+    private boolean cheackDueTime(LocalDate dueTime){
+        LocalDate now = LocalDate.now();
+        if(dueTime.isBefore(now)){
+            return false;
+        }
+        return true;
+    }
 
 }
