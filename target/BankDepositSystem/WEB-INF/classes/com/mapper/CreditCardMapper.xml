@@ -6,7 +6,7 @@
         INSERT INTO creditcard_#{custmNo} VALUES (#{cardNo}, 0, CURRENTDATE());
     </insert>
     <insert id="deposit">
-        UPDATE creditcard_#{custmNo} SET nums=${nums}, dueTime=${dueTime}
+        UPDATE creditcard_${custmNo} SET nums=nums+${nums}, dutTime=#{dueTime} WHERE cardNo=#{cardNo}
     </insert>
     <select id="getCreditCardNo" resultType="java.lang.String">
         SELECT no from num_set where type='3';

@@ -13,7 +13,7 @@ public interface ICreditCardDAO {
     void createCreditCard(@Param("custmNo") String custmNo, @Param("cardNo") String cardNo);
 
     // 存取款(获取&&定期)、
-    void deposit(String custmNo, String creditCardNo, Integer nums, String dutTime);
+    void deposit(@Param("custmNo") String custmNo, @Param("cardNo") String creditCardNo, @Param("nums") Integer nums, @Param("dueTime") String dutTime);
 
     /*
      *  生成信用卡号

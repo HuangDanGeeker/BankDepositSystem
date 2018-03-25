@@ -64,17 +64,36 @@ public class SttafOperationController {
         System.out.println("creditCardNum " + creditCardNum);
         System.out.println("nums " + nums);
         System.out.println("type " + type);
-        if(type == 1){
+        System.out.println("dueTime " + dueTime);
+
+        //活期&&定期存储的到期时间处理
+        if(type.equals("1")){
             LocalDate date = LocalDate.now();
-            int month = Integer.valueOf(date.getMonth().toString());
+            int month = date.getMonth().getValue();
             month = month + Integer.valueOf(dueTime);
             int year = date.getYear() + month/12;
             LocalDate endDate = LocalDate.of(year, (month % 12 + 1), date.getDayOfMonth());
-            System.out.println("dueTime " + year +" "+ (month % 12 + 1) +" "+ date.getDayOfMonth());
+            System.out.println("real dueTime " + year +" "+ (month % 12 + 1) +" "+ date.getDayOfMonth());
             String realDueTime = "";    //TODO 确定日期的格式
             creditCardService.deposit(custmNo, creditCardNum, nums, realDueTime);
         }else{
-            creditCardService.deposit(custmNo, creditCardNum, nums, dueTime);
+            int monthScape = 0;
+            int yearScape = 0;
+            switch(dueTime){
+                case "1":monthScape=3;break;
+                case "2":monthScape=6;break;
+                case "3":yearScape=1;break;
+                case "4":yearScape=2;break;
+                case "5":yearScape=3;break;
+            }
+            LocalDate date = LocalDate.now();
+            int month = date.getMonth().getValue();
+            month = month + monthScape;
+            int year = yearScape + date.getYear() + month/12;
+            LocalDate endDate = LocalDate.of(year, (month % 12 + 1), date.getDayOfMonth());
+//            System.out.println("real dueTime " + year +" "+ (month % 12 + 1) +" "+ date.getDayOfMonth());
+            System.out.println(endDate.toString());
+            creditCardService.deposit(custmNo, creditCardNum, nums, endDate.toString());
         }
 
         Map result = new HashMap<String, String>();

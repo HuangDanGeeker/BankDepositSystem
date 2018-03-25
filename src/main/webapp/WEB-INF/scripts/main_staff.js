@@ -32,10 +32,10 @@ function createCustom() {
     displayPanel("block", "none", "none", "none");
 }
 function anyTimeDeal() {
-    displayPanel("none", "block", "none",  "none");
+    displayPanel("none", "none", "block",  "none");
 }
 function scheduleDeal() {
-    displayPanel("none", "none", "block", "none");
+    displayPanel("none", "block", "none", "none");
 }
 function accountDetail() {
     displayPanel("none", "none", "none", "block");
@@ -94,6 +94,7 @@ function submitAnyTimeDeposit() {
         error:function(XMLHttpRequest, textStatus, errorThrown) {
             var result = eval("("+XMLHttpRequest.responseText+")");
             console.log("deposit succcess");
+            console.log(result);
         }
     });
 }
@@ -105,17 +106,25 @@ function submitSpecificDeposit() {
     var nums = $('#scheduleDealPanel #custmNums').val();
     var type = 2;
     var dueTime = $('#scheduleDealPanel #dueTime').val();
+    console.log(custmNo);
+    console.log(creditCardNum);
+    console.log(nums);
+    console.log(type);
+    console.log(dueTime);
+
 
     $.ajax({
         url:"http://localhost:8080/BankDepositSystem/staff/deposit/"+custmNo+"/"+creditCardNum+"/"+nums+"/"+type+"/"+dueTime,
         dataType:'jsonp',
         processData: true,
-        type:'put',
+        type:'get',
         success:function(){
         },
         error:function(XMLHttpRequest, textStatus, errorThrown) {
             var result = eval("("+XMLHttpRequest.responseText+")");
-            console.log("deposit succcess");
+            console.log("deposit succcess herhe");
+            console.log(result);
+            console.log(XMLHttpRequest.responseText);
         }});
 }
 
