@@ -2,11 +2,18 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.dao.ICreditCardDAO">
 
+    <resultMap id="creditCard" type="com.bean.CreditCard">
+        <result column="cardNo" property="no" jdbcType="VARCHAR" />
+        <result column="nums" property="nums" jdbcType="INTEGER"/>
+        <result column="intrest" property="interst" jdbcType="INTEGER" />
+        <result column="dutTime" property="dueTime" jdbcType="DATE" />
+    </resultMap>
+
     <insert id="createCreditCard">
         INSERT INTO creditcard_#{custmNo} VALUES (#{cardNo}, 0, CURRENTDATE());
     </insert>
     <insert id="deposit">
-        UPDATE creditcard_${custmNo} SET nums=nums+${nums}, dutTime=#{dueTime} WHERE cardNo=#{cardNo}
+        UPDATE creditcard_${custmNo} SET nums=nums+${nums}, dutTime=#{dueTime, jdbcType=DATE} WHERE cardNo=#{cardNo}
     </insert>
     <select id="getCreditCardNo" resultType="java.lang.String">
         SELECT no from num_set where type='3';
@@ -14,4 +21,7 @@
     <update id="addCreditCardNo">
         UPDATE num_set set no = #{newNum} WHERE type='3'
     </update>
+    <select id="queryCreditCardRecord" resultMap="creditCard">
+        select * from creditcard_${cardNo};
+    </select>
 </mapper>

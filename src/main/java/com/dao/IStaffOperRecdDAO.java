@@ -19,6 +19,6 @@ public interface IStaffOperRecdDAO {
     List<StaffOperRecord> queryRecord(@Param("no") String no, @Param("operType") Integer type);
 
     //添加纪录
-    void insertRecord(@Param("record") StaffOperRecord record);
+//    void insertRecord(@Param("record") StaffOperRecord record);
 
 }

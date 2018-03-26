@@ -3,10 +3,10 @@
 <mapper namespace="com.dao.ICreditCardDAO">
 
     <resultMap id="creditCard" type="com.bean.CreditCard">
-        <result column="cardNo" property="no" jdbcType="VATCHAR"></result>
-        <result column="nums" property="nums" jdbcType="INTEGER"></result>
-        <result column="intrest" property="interst" jdbcType="INTEGER"></result>
-        <result column="dutTime" property="dueTime" jdbcType="DATE"></result>
+        <result column="cardNo" property="no" jdbcType="VARCHAR" />
+        <result column="nums" property="nums" jdbcType="INTEGER"/>
+        <result column="intrest" property="interst" jdbcType="INTEGER" />
+        <result column="dutTime" property="dueTime" jdbcType="DATE" />
     </resultMap>
 
     <insert id="createCreditCard">

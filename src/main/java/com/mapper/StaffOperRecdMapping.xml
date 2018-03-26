@@ -12,14 +12,14 @@
 
     <!--查询记录-->
     <!--TODO  and operDate <= #{endDate} and operDate >= #{startDate}-->
-    <select id="queryRecord" >
+    <select id="queryRecord" resultMap="StaffOperRecord">
         SELECT * FROM recd_staff_${no}
         <where>
             <if test="no != null">
                 no = #{no}
             </if>
             <if test="operType != null">
-                operType=#{operType}
+                and operType=#{operType}
             </if>
         </where>
     </select>
