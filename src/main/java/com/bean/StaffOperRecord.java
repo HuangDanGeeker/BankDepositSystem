@@ -1,9 +1,8 @@
 package com.bean;
 
-import com.enums.StaffOperType;
+import com.mybatisHandler.EnumHandler.StaffOperType;
 
 import java.time.LocalDate;
-import java.util.Date;
 
 /**
  * Created by HuangDanGeeker on 2018/3/16.
@@ -11,7 +10,7 @@ import java.util.Date;
  * Record clause of Staff Operation
  */
 public class StaffOperRecord {
-    String operType;
+    StaffOperType operType;
     String custmNo;
     String custmName;
     String creditCardNo;
@@ -34,7 +33,7 @@ public class StaffOperRecord {
     }
 
     public StaffOperRecord(){
-        operType = "1";
+        operType = StaffOperType.Deposit;
         custmNo = "123";
         custmName = "123";
         nums = 10;
@@ -42,11 +41,11 @@ public class StaffOperRecord {
     }
 
 
-    public String getOperType() {
+    public StaffOperType getOperType() {
         return operType;
     }
 
-    public void setOperType(String operType) {
+    public void setOperType(StaffOperType operType) {
         this.operType = operType;
     }
 
