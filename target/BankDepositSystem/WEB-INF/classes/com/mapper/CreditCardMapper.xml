@@ -5,7 +5,7 @@
     <resultMap id="creditCard" type="com.bean.CreditCard">
         <result column="cardNo" property="no" jdbcType="VARCHAR" />
         <result column="nums" property="nums" jdbcType="INTEGER"/>
-        <result column="intrest" property="interst" jdbcType="INTEGER" />
+        <result column="intrest" property="intrest" jdbcType="INTEGER" />
         <result column="dutTime" property="dueTime" jdbcType="DATE" />
     </resultMap>
 

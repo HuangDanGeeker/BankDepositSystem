@@ -9,8 +9,8 @@ public class CreditCard {
 
     String no;
     Integer nums;
-    Date dueTime;
-    Integer intrest;
+    String dueTime;
+    Float intrest;
 
 
     public String getNo() {
@@ -29,19 +29,19 @@ public class CreditCard {
         this.nums = nums;
     }
 
-    public Date getDueTime() {
+    public String getDueTime() {
         return dueTime;
     }
 
-    public void setDueTime(Date dueTime) {
+    public void setDueTime(String dueTime) {
         this.dueTime = dueTime;
     }
 
-    public Integer getIntrest() {
+    public Float getIntrest() {
         return intrest;
     }
 
-    public void setIntrest(Integer intrest) {
+    public void setIntrest(Float intrest) {
         this.intrest = intrest;
     }
 

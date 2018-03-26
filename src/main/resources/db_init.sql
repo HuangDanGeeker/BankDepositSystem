@@ -10,9 +10,9 @@ create TABLE customer (name VARCHAR(20), no VARCHAR(20) PRIMARY KEY, passwd INT 
 -- 3.创建客户操作记录表
 create TABLE recd_custm_0902150228(no VARCHAR(20) PRIMARY KEY, operType INT, nums INT, dealerNo VARCHAR(20) DEFAULT '0', dealerName VARCHAR(20) DEFAULT '0', operDate DATETIME);
 -- 4.创建柜员操作记录表
-create TABLE recd_staff_0902150228(no VARCHAR(20) PRIMARY KEY, operType INT, custmNo VARCHAR(20) NOT NULL, custmName VARCHAR(20) NOT NULL, nums INT, operDate DATETIME);
+create TABLE recd_staff_1(operType INT, custmNo VARCHAR(20) NOT NULL, custmName VARCHAR(20) NOT NULL, nums INT, operDate DATETIME);
 -- 5.创建用户账号下所有的银行卡存款表
-create TABLE  creditcard_0902150228(cardNo VARCHAR(20) PRIMARY KEY NOT NULL , nums INT DEFAULT 0, dutTime DATE);
+create TABLE  creditcard_0902150228(cardNo VARCHAR(20) PRIMARY KEY NOT NULL , nums INT DEFAULT 0, intrest FLOAT DEFAULT 0, dueTime VARCHAR(20));
 -- 6.创建信用卡号&&账号集(存储最新创建的账号和信用卡账号)
 create TABLE  num_set(no VARCHAR(20) PRIMARY KEY, type INT DEFAULT 0);
 -- 7.创建存储利率表
