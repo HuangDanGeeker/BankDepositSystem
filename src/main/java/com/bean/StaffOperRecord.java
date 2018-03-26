@@ -1,6 +1,8 @@
 package com.bean;
 
 import com.enums.StaffOperType;
+
+import java.time.LocalDate;
 import java.util.Date;
 
 /**
@@ -12,15 +14,31 @@ public class StaffOperRecord {
     String operType;
     String custmNo;
     String custmName;
+    String creditCardNo;
     Integer nums;
-    Date operDate;
+    String operDate;
+    public String getCreditCardNo() {
+        return creditCardNo;
+    }
+
+    public void setCreditCardNo(String creditCardNo) {
+        this.creditCardNo = creditCardNo;
+    }
+
+    public String getOperDate() {
+        return operDate;
+    }
+
+    public void setOperDate(String operDate) {
+        this.operDate = operDate;
+    }
 
     public StaffOperRecord(){
         operType = "1";
         custmNo = "123";
         custmName = "123";
         nums = 10;
-        operDate = new Date();
+        operDate = LocalDate.now().toString();
     }
 
 
@@ -55,13 +73,6 @@ public class StaffOperRecord {
         this.nums = nums;
     }
 
-    public Date getDate() {
-        return operDate;
-    }
-
-    public void setDate(Date date) {
-        this.operDate = date;
-    }
 
 
 }

@@ -5,6 +5,7 @@
         <result column="operType" property="operType" jdbcType="VARCHAR" />
         <result column="custmNo" property="custmNo" jdbcType="VARCHAR" />
         <result column="custmName" property="custmName" jdbcType="VARCHAR"/>
+        <result column="creditCardNo" property="cridetCardNo" jdbcType="VARCHAR"/>
         <result column="nums" property="nums" jdbcType="INTEGER"/>
         <result column="operDate" property="operDate" jdbcType="DATE"/>
     </resultMap>
