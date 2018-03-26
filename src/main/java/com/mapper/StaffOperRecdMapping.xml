@@ -2,9 +2,8 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.dao.IStaffOperRecdDAO">
     <resultMap id="StaffOperRecord" type="com.bean.StaffOperRecord">
-        <result column="no" property="no" jdbcType="VARCHAR"/>
-        <result column="operType" property="operType" jdbcType="INTEGER"/>
-        <result column="custmNo" property="custmNo" jdbcType="VARCHAR"/>
+        <result column="operType" property="operType" jdbcType="INTEGER" javaType="com.enums.StaffOperType"/>
+        <result column="custmNo" property="custmNo" jdbcType="VARCHAR" />
         <result column="custmName" property="custmName" jdbcType="VARCHAR"/>
         <result column="nums" property="nums" jdbcType="INTEGER"/>
         <result column="operDate" property="operDate" jdbcType="DATE"/>
@@ -15,11 +14,8 @@
     <select id="queryRecord" resultMap="StaffOperRecord">
         SELECT * FROM recd_staff_${no}
         <where>
-            <if test="no != null">
-                no = #{no}
-            </if>
             <if test="operType != null">
-                and operType=#{operType}
+                operType=#{operType}
             </if>
         </where>
     </select>

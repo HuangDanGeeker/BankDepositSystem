@@ -144,7 +144,7 @@ public class SttafOperationController {
     @RequestMapping("/queryStaffOperRecord/{staffNo}")
     @ResponseBody
     public Map<String, Object> queryStaffOperRecord(@PathVariable("staffNo") String staffNo){
-        System.out.println("queryCustmIntrest");
+        System.out.println("queryStaffOperRecord");
         System.out.println("staffNo " + staffNo);
         Map<String, Object> result = new HashMap<>(5,5);
         //检查用户账号存在情况

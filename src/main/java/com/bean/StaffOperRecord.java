@@ -9,7 +9,6 @@ import java.util.Date;
  * Record clause of Staff Operation
  */
 public class StaffOperRecord {
-    String no;
     StaffOperType operType;
     String custmNo;
     String custmName;
@@ -17,7 +16,6 @@ public class StaffOperRecord {
     Date operDate;
 
     public StaffOperRecord(){
-        no= "123";
         operType = StaffOperType.ChaPass;
         custmNo = "123";
         custmName = "123";
@@ -25,13 +23,6 @@ public class StaffOperRecord {
         operDate = new Date();
     }
 
-    public String getNo() {
-        return no;
-    }
-
-    public void setNo(String no) {
-        this.no = no;
-    }
 
     public StaffOperType getOperType() {
         return operType;

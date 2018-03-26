@@ -125,7 +125,7 @@
     </key>
     <column id="40" parent="16" name="operType">
       <Position>1</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>varchar(4)|0</DataType>
     </column>
     <column id="41" parent="16" name="custmNo">
       <Position>2</Position>
