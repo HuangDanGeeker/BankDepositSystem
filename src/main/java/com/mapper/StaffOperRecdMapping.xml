@@ -2,7 +2,7 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.dao.IStaffOperRecdDAO">
     <resultMap id="StaffOperRecord" type="com.bean.StaffOperRecord">
-        <result column="operType" property="operType" jdbcType="INTEGER" javaType="com.enums.StaffOperType"/>
+        <result column="operType" property="operType" jdbcType="VARCHAR" />
         <result column="custmNo" property="custmNo" jdbcType="VARCHAR" />
         <result column="custmName" property="custmName" jdbcType="VARCHAR"/>
         <result column="nums" property="nums" jdbcType="INTEGER"/>

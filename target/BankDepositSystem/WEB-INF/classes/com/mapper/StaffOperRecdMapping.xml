@@ -3,7 +3,7 @@
 <mapper namespace="com.dao.IStaffOperRecdDAO">
     <resultMap id="StaffOperRecord" type="com.bean.StaffOperRecord">
         <result column="no" property="no" jdbcType="VARCHAR"/>
-        <result column="operType" property="operType" jdbcType="INTEGER" javaType="com.enums.StaffOperType"/>
+        <result column="operType" property="operType" jdbcType="VARCHAR"/>
         <result column="custmNo" property="custmNo" jdbcType="VARCHAR" />
         <result column="custmName" property="custmName" jdbcType="VARCHAR"/>
         <result column="nums" property="nums" jdbcType="INTEGER"/>

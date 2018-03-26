@@ -9,14 +9,14 @@ import java.util.Date;
  * Record clause of Staff Operation
  */
 public class StaffOperRecord {
-    StaffOperType operType;
+    String operType;
     String custmNo;
     String custmName;
     Integer nums;
     Date operDate;
 
     public StaffOperRecord(){
-        operType = StaffOperType.ChaPass;
+        operType = "1";
         custmNo = "123";
         custmName = "123";
         nums = 10;
@@ -24,11 +24,11 @@ public class StaffOperRecord {
     }
 
 
-    public StaffOperType getOperType() {
+    public String getOperType() {
         return operType;
     }
 
-    public void setOperType(StaffOperType operType) {
+    public void setOperType(String operType) {
         this.operType = operType;
     }
 

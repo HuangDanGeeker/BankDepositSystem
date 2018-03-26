@@ -267,10 +267,10 @@ function qeruyStaffOperRecrd(){
                 $('#infoModal').modal('show');
                 return;
             }
-            $('#custmHistoryPanel tbody tr').remove();
-            var parent = $('#custmHistoryPanel tbody');
+            $('#staffHistoryPanel tbody tr').remove();
+            var parent = $('#staffHistoryPanel tbody');
             for(var i = 0; i < result.list.length; i++){
-                parent.append("<tr><td>"+result.list[i].no+"</td><td>"+result.list[i].nums+"</td><td>"+result.list[i].intrest+"</td><td>"+result.list[i].dueTime+"</td></tr>");
+                parent.append("<tr><td>"+result.list[i].custmName+"</td><td>"+result.list[i].custmNo+"</td><td>"+result.list[i].creditCardNo+"</td><td>"+result.list[i].nums+"</td><td>"+result.list[i].date+"</td></tr>");
             }
         }
     });

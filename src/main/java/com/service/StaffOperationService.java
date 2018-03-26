@@ -19,6 +19,4 @@ public class StaffOperationService {
         return staffOperRecdDAO.queryRecord(staff, null);
     }
 
-
-
 }
