@@ -52,6 +52,7 @@ function scheduleDeal() {
 }
 function accountDetail() {
     displayPanel("none", "none", "none", "block");
+    $('#staffHistoryRadio').trigger('click');
 }
 
 function displayPanel(b1, b2, b3, b4) {
