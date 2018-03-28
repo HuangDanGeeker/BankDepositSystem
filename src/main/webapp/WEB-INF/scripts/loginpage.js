@@ -34,7 +34,9 @@ function login() {
                     window.location.href = "http://localhost:8080/BankDepositSystem/main/custm";
                 }
             }else{  //登录失败
-                $('#loginModal').modal('show');
+                $('#infoModal .modal-body').html('登录失败<br>请检查您的账号和密码');
+                $('#infoModal .modal-title').text("Login Error");
+                $('#infoModal').modal('show');
             }
         }});
 }
@@ -46,7 +48,6 @@ function regist() {
     var registPhone = $('#registPhone').val();
     var registAddress = $('#registAddress').val();
 
-    //TODO 记住 -> 用户名和密码
     $.ajax({
         url:"http://localhost:8080/BankDepositSystem/regist/"+registName+"/"+registRole+"/"+registPasswd+"/"+registBirthday+"/"+registPhone+"/"+registAddress,
         dataType:'jsonp',
@@ -62,8 +63,13 @@ function regist() {
                 signin();
                 $('#userName').val(registName);
                 $('#userPasswd').val(registPasswd);
+                $('#infoModal .modal-body').html('注册成功<br>请检查您的账号是 ' + registResult.registNo);
+                $('#infoModal .modal-title').text("Regist Success");
+                $('#infoModal').modal('show');
             }else{
-                //TODO
+                $('#infoModal .modal-body').html(result.reason);
+                $('#infoModal .modal-title').text("Regist Error");
+                $('#infoModal').modal('show');
             }
         }});
 }

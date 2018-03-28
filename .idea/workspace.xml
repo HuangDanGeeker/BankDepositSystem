@@ -10,14 +10,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04f700b1-4159-49cf-ad17-30584b3ecf4f" name="Default" comment="failed to complete 'MyBatisHandler'">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/385214fc-f780-4560-91ed-06c074010f56.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/385214fc-f780-4560-91ed-06c074010f56.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/controller/BasicController.java" afterPath="$PROJECT_DIR$/src/main/java/com/controller/BasicController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dao/ICustomerDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/dao/ICustomerDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/dao/IStaffDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/dao/IStaffDAO.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mapper/CustomerMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/mapper/CustomerMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/mapper/StaffMapper.xml" afterPath="$PROJECT_DIR$/src/main/java/com/mapper/StaffMapper.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/service/CustomerService.java" afterPath="$PROJECT_DIR$/src/main/java/com/service/CustomerService.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/service/StaffService.java" afterPath="$PROJECT_DIR$/src/main/java/com/service/StaffService.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/scripts/loginpage.js" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/scripts/loginpage.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.html" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.html" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -67,140 +61,42 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="bank_deposite_system.customer" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/92f558ad/385214fc-f780-4560-91ed-06c074010f56/bank_deposite_system.customer">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+      <file leaf-file-name="BasicController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/BasicController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="93" column="0" lean-forward="true" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="bank_deposite_system.num_set" pinned="false" current-in-tab="true">
-        <entry file="dbDummy://dbtable:/92f558ad/385214fc-f780-4560-91ed-06c074010f56/bank_deposite_system.num_set">
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
-          <provider editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+      <file leaf-file-name="login.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="715">
+              <caret line="97" column="30" lean-forward="true" selection-start-line="97" selection-start-column="30" selection-end-line="97" selection-end-column="30" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CustomerMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/target/BankDepositSystem/WEB-INF/classes/com/mapper/CustomerMapper.xml">
+      <file leaf-file-name="loginpage.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/scripts/loginpage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="53" column="47" lean-forward="true" selection-start-line="53" selection-start-column="47" selection-end-line="53" selection-end-column="47" />
-              <folding>
-                <marker date="1522251108823" expanded="true" signature="723:812" ph="INSERT INTO customer... " />
-                <marker date="1522251108823" expanded="true" signature="869:904" ph="DELETE FROM " />
-                <marker date="1522251108823" expanded="true" signature="961:1092" ph="UPDATE custo... " />
-                <marker date="1522251108823" expanded="true" signature="1647:1698" ph="UPDATE custo... " />
-                <marker date="1522251108823" expanded="true" signature="1781:1816" ph="select no fr... customer" />
-                <marker date="1522251108823" expanded="true" signature="1867:1906" ph="UPDATE num_s... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StaffMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/target/BankDepositSystem/WEB-INF/classes/com/mapper/StaffMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="39" column="16" lean-forward="true" selection-start-line="39" selection-start-column="16" selection-end-line="39" selection-end-column="16" />
-              <folding>
-                <marker date="1522250187034" expanded="true" signature="648:721" ph="INSERT INTO staff... " />
-                <marker date="1522250187034" expanded="true" signature="775:807" ph="DELETE FROM " />
-                <marker date="1522250187034" expanded="true" signature="861:969" ph="UPDATE staff... " />
-                <marker date="1522250187034" expanded="true" signature="1053:1092" ph="SELECT passw... staff" />
-                <marker date="1522250187034" expanded="true" signature="1638:1686" ph="UPDATE staff... " />
-                <marker date="1522250187034" expanded="true" signature="1795:1829" ph="select no fr... customer" />
-                <marker date="1522250187034" expanded="true" signature="1795:1830" ph="select no fr... num_set" />
-                <marker date="1522250187034" expanded="true" signature="1881:1920" ph="UPDATE num_s... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomerService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/service/CustomerService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="443">
-              <caret line="59" column="29" lean-forward="false" selection-start-line="59" selection-start-column="29" selection-end-line="59" selection-end-column="29" />
+            <state relative-caret-position="682">
+              <caret line="31" column="22" lean-forward="true" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="IStaffDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/dao/IStaffDAO.java">
+      <file leaf-file-name="main_staff.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/scripts/main_staff.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="24" column="12" lean-forward="false" selection-start-line="24" selection-start-column="12" selection-end-line="24" selection-end-column="12" />
+            <state relative-caret-position="462">
+              <caret line="116" column="46" lean-forward="true" selection-start-line="114" selection-start-column="16" selection-end-line="116" selection-end-column="46" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CustomerMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mapper/CustomerMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="415">
-              <caret line="53" column="36" lean-forward="false" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
-              <folding>
-                <marker date="1522251108823" expanded="true" signature="723:812" ph="INSERT INTO customer... " />
-                <marker date="1522251108823" expanded="true" signature="869:904" ph="DELETE FROM " />
-                <marker date="1522251108823" expanded="true" signature="961:1092" ph="UPDATE custo... " />
-                <marker date="1522251108823" expanded="true" signature="1647:1698" ph="UPDATE custo... " />
-                <marker date="1522251108823" expanded="true" signature="1781:1796" ph="select no fr... customer" />
-                <marker date="1522251108823" expanded="true" signature="1781:1816" ph="select no fr... num_set" />
-                <marker date="1522251108823" expanded="true" signature="1867:1905" ph="UPDATE num_s... " />
-                <marker date="1522251108823" expanded="true" signature="1867:1906" ph="UPDATE num_s... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StaffMapper.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/mapper/StaffMapper.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="39" column="17" lean-forward="true" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
-              <folding>
-                <marker date="1522250187034" expanded="true" signature="648:721" ph="INSERT INTO staff... " />
-                <marker date="1522250187034" expanded="true" signature="775:807" ph="DELETE FROM " />
-                <marker date="1522250187034" expanded="true" signature="861:969" ph="UPDATE staff... " />
-                <marker date="1522250187034" expanded="true" signature="1053:1092" ph="SELECT passw... staff" />
-                <marker date="1522250187034" expanded="true" signature="1163:1182" ph="SELECT passw... staff" />
-                <marker date="1522250187034" expanded="true" signature="1638:1686" ph="UPDATE staff... " />
-                <marker date="1522250187034" expanded="true" signature="1795:1810" ph="select MAX(n... customer" />
-                <marker date="1522250187034" expanded="true" signature="1795:1818" ph="select no fr... customer" />
-                <marker date="1522250187034" expanded="true" signature="1795:1830" ph="select no fr... num_set" />
-                <marker date="1522250187034" expanded="true" signature="1881:1920" ph="UPDATE num_s... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="StaffService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/service/StaffService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="487">
-              <caret line="35" column="12" lean-forward="true" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -294,10 +190,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/mapper/CustmOperRecdMapping.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/dao/ICustmOperRecdDAO.java" />
         <option value="$PROJECT_DIR$/src/main/resources/configs/DB.properties" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/scripts/loginpage.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/controller/CommonController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/bean/Customer.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/styles/main_staff.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/service/CreditAccountService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/dao/ICreditCardDAO.java" />
@@ -324,6 +218,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/controller/BasicController.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/385214fc-f780-4560-91ed-06c074010f56/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/com/mapper/CustomerMapper.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.html" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/scripts/loginpage.js" />
       </list>
     </option>
   </component>
@@ -1321,7 +1217,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="154098000" />
+    <option name="totallyTimeSpent" value="155143000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1334,6 +1230,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1366" height="768" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.2801205" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1351,12 +1248,12 @@
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24355084" sideWeight="0.49096385" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23216996" sideWeight="0.5090361" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15402125" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15402125" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32680723" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.20409712" sideWeight="0.5060241" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="true" show_stripe_button="true" weight="0.5572289" sideWeight="0.4969651" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.5572289" sideWeight="0.4969651" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1478,13 +1375,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/scripts/loginpage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-390">
-          <caret line="38" column="12" lean-forward="true" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/bean/Customer.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -1520,13 +1410,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="396">
           <caret line="26" column="44" lean-forward="true" selection-start-line="26" selection-start-column="44" selection-end-line="26" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1892">
-          <caret line="106" column="18" lean-forward="false" selection-start-line="106" selection-start-column="18" selection-end-line="106" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -1659,8 +1542,8 @@
         <state relative-caret-position="330">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
-            <element signature="e#438#439#0" expanded="true" />
-            <element signature="e#502#503#0" expanded="true" />
+            <element signature="e#438#439#0" expanded="false" />
+            <element signature="e#502#503#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1685,14 +1568,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="8" column="46" lean-forward="false" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/scripts/main_staff.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="37" lean-forward="false" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
           <folding />
         </state>
       </provider>
@@ -1801,14 +1676,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
           <caret line="17" column="12" lean-forward="false" selection-start-line="17" selection-start-column="12" selection-end-line="17" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/BasicController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="85" column="44" lean-forward="false" selection-start-line="85" selection-start-column="44" selection-end-line="85" selection-end-column="44" />
           <folding />
         </state>
       </provider>
@@ -1932,6 +1799,19 @@
         </state>
       </provider>
     </entry>
+    <entry file="dbDummy://dbtable:/92f558ad/385214fc-f780-4560-91ed-06c074010f56/bank_deposite_system.num_set">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/target/BankDepositSystem/WEB-INF/classes/com/mapper/StaffMapper.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
@@ -1949,15 +1829,34 @@
         </state>
       </provider>
     </entry>
-    <entry file="dbDummy://dbtable:/92f558ad/385214fc-f780-4560-91ed-06c074010f56/bank_deposite_system.num_set">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/scripts/main_staff.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="116" column="46" lean-forward="true" selection-start-line="114" selection-start-column="16" selection-end-line="116" selection-end-column="46" />
+          <folding />
         </state>
       </provider>
-      <provider editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/controller/BasicController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="93" column="0" lean-forward="true" selection-start-line="93" selection-start-column="0" selection-end-line="93" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/views/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="715">
+          <caret line="97" column="30" lean-forward="true" selection-start-line="97" selection-start-column="30" selection-end-line="97" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/scripts/loginpage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="682">
+          <caret line="31" column="22" lean-forward="true" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
           <folding />
         </state>
       </provider>
