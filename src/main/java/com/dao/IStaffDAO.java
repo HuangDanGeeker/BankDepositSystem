@@ -32,4 +32,7 @@ public interface IStaffDAO {
 
     // 生成账号
     String generateNo();
+
+    //数据库账号自增
+    void updateNo();
 }

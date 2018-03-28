@@ -56,6 +56,7 @@ public class CustomerService {
     }
 
     public Integer generateNo(){
+        customerDAO.updateNo();
         return Integer.valueOf(customerDAO.generateNo()) + 1;
     }
 

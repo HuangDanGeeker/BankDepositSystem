@@ -46,6 +46,9 @@
     </update>
     <!-- 返回最大的Staff no -->
     <select id="generateNo" resultType="java.lang.String">
-        select no from customer ORDER BY no desc LIMIT 0,1
+        select no from num_set WHERE type=1;
     </select>
+    <update id="updateNo">
+        UPDATE num_set SET no=no+1 WHERE type=1;
+    </update>
 </mapper>

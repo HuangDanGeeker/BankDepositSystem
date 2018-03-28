@@ -35,4 +35,6 @@ public interface ICustomerDAO {
 
     //产生账号
     String generateNo();
+    //数据库账号自增
+    void updateNo();
 }

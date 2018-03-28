@@ -3,7 +3,6 @@ package com.service;
 import com.bean.Staff;
 import com.dao.IStaffDAO;
 import org.springframework.stereotype.Service;
-
 import javax.annotation.Resource;
 import java.util.List;
 
@@ -34,6 +33,7 @@ public class StaffService
 
 
     public Integer generateNo(){
+        staffDAO.updateNo();
         return Integer.valueOf(staffDAO.generateNo())+1;
     }
 }
