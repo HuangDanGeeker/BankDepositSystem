@@ -61,7 +61,7 @@
     </column>
     <column id="26" parent="13" name="birthday">
       <Position>4</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>varchar(20)|0</DataType>
     </column>
     <column id="27" parent="13" name="phone">
       <Position>5</Position>
@@ -166,7 +166,7 @@
     </column>
     <column id="49" parent="17" name="birthday">
       <Position>4</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>varchar(20)|0</DataType>
     </column>
     <column id="50" parent="17" name="phone">
       <Position>5</Position>

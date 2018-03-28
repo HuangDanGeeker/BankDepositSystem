@@ -70,13 +70,17 @@ public class BasicController {
         System.out.println("registBirthday " + registBirthday);
         System.out.println("registPhone " + registPhone);
         System.out.println("registAddress " + registAddress);
-        if(registRole.equalsIgnoreCase("custm")){
-            customerService.regist(registName, customerService.generateNo(), registPasswd, registBirthday, registPhone, registAddress);
+        Integer registNo = -1;
+        if(registRole.equalsIgnoreCase("customer")){
+            registNo = customerService.generateNo();
+            customerService.regist(registName, registNo, registPasswd, registBirthday, registPhone, registAddress);
         }else if(registRole.equalsIgnoreCase("staff")){
-            staffService.regist(registName, staffService.generateNo(), registPasswd, registBirthday, registPhone);
+            registNo = staffService.generateNo();
+            staffService.regist(registName, registNo, registPasswd, registBirthday, registPhone);
         }
         Map result = new HashMap<String, String>();
         result.put("registStatus", "success");
+        result.put("registNo", registNo);
         return result;
     }
 
