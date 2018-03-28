@@ -38,6 +38,9 @@
             <if test="passwd != null">
                 and passwd = #{passwd}
             </if>
+            <if test="birthday != null">
+                and birthday = #{birthday}
+            </if>
         </where>
     </select>
 

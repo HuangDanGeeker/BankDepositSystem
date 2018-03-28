@@ -15,12 +15,12 @@ public class StaffService
     @Resource
     private IStaffDAO staffDAO;
 
-    public boolean checkStaff(String custmNo, String custmPasswd, String custmName){
-        List<Staff> staffList = staffDAO.checkStaff(custmName, custmNo, custmPasswd);
+    public boolean checkStaff(String custmNo, String custmPasswd, String custmName, String birthday){
+        List<Staff> staffList = staffDAO.checkStaff(custmName, custmNo, custmPasswd, birthday);
         return (0 != staffList.size());
     }
     public boolean checkStaff(String custmNo){
-        List<Staff> staffList = staffDAO.checkStaff(null, custmNo, null);
+        List<Staff> staffList = staffDAO.checkStaff(null, custmNo, null, null);
         return (0 != staffList.size());
     }
 

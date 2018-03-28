@@ -25,7 +25,7 @@ public interface ICustomerDAO {
     void deleteCustomer(@Param("customer")Customer customer);
 
     // 查询客户
-    List<Customer> queryCustomer(@Param("no") String no, @Param("passwd") String custmPasswd, @Param("name") String name);
+    List<Customer> queryCustomer(@Param("no") String no, @Param("passwd") String custmPasswd, @Param("name") String name, @Param("birthday") String birthday);
 
     // 查询密码
     Integer queryPassWd(@Param("no") String no, @Param("passwd") Integer passwd);

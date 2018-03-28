@@ -21,19 +21,19 @@ public class CustomerService {
 
 
     public List<Customer> queryCustomer(String custmNo, String custmName){
-       List<Customer> customerList = customerDAO.queryCustomer(custmNo, null, custmName);
+       List<Customer> customerList = customerDAO.queryCustomer(custmNo, null, custmName, null);
        return customerList;
     }
 
     public boolean checkCustomer(String custmNo){
 
-        List<Customer> customerList = customerDAO.queryCustomer(custmNo, null, null);
+        List<Customer> customerList = customerDAO.queryCustomer(custmNo, null, null, null);
         return (0 != customerList.size());
 
     }
-    public boolean checkCustomer(String custmNo, String custmPasswd, String custmName){
+    public boolean checkCustomer(String custmNo, String custmPasswd, String custmName, String birthday){
 
-        List<Customer> customerList = customerDAO.queryCustomer(custmNo, custmPasswd, custmName);
+        List<Customer> customerList = customerDAO.queryCustomer(custmNo, custmPasswd, custmName, birthday);
         return (0 != customerList.size());
 
     }
@@ -41,7 +41,7 @@ public class CustomerService {
 
     public List<String> checkCustomerNo(String custmName){
 
-        List<Customer> result = customerDAO.queryCustomer(null, null, custmName);
+        List<Customer> result = customerDAO.queryCustomer(null, null, custmName, null);
 
         //use java1.8 stream
         return result.stream().map(n -> n.getNo()).collect(Collectors.toList());

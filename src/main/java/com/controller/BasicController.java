@@ -43,13 +43,13 @@ public class BasicController {
         System.out.println("userPasswd " + userPasswd);
         // return cookie as 'remember me ' request
         Map result = new HashMap<String, String>();
-        if(customerService.checkCustomer(userNo, userPasswd, userName)){
+        if(customerService.checkCustomer(userNo, userPasswd, userName, null)){
             result.put("loginStatus", "success");
             result.put("loginRole", "custm");
             result.put("userName", userName);
             result.put("userNo", userNo);
             return result;
-        }else if (staffService.checkStaff(userNo, userPasswd, userName)){
+        }else if (staffService.checkStaff(userNo, userPasswd, userName, null)){
             result.put("loginStatus", "success");
             result.put("loginRole", "staff");
             result.put("userName", userName);
@@ -71,14 +71,27 @@ public class BasicController {
         System.out.println("registPhone " + registPhone);
         System.out.println("registAddress " + registAddress);
         Integer registNo = -1;
+        Map result = new HashMap<String, String>();
         if(registRole.equalsIgnoreCase("customer")){
+            //已经存在相同用户名用户生日的用户账号
+            if(customerService.checkCustomer(null, registName,null,registBirthday)){
+                result.put("registStatus", "failure");
+                result.put("reason", "the customer is already exist!");
+                return result;
+            }
             registNo = customerService.generateNo();
             customerService.regist(registName, registNo, registPasswd, registBirthday, registPhone, registAddress);
         }else if(registRole.equalsIgnoreCase("staff")){
+            //已经存在相同柜员名柜员生日的柜员账号
+            if(staffService.checkStaff(null, registName,null,registBirthday)){
+                result.put("registStatus", "failure");
+                result.put("reason", "the staff is already exist!");
+                return result;
+            }
             registNo = staffService.generateNo();
             staffService.regist(registName, registNo, registPasswd, registBirthday, registPhone);
         }
-        Map result = new HashMap<String, String>();
+
         result.put("registStatus", "success");
         result.put("registNo", registNo);
         return result;

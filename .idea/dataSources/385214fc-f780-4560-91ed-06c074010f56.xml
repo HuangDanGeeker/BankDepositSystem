@@ -78,8 +78,9 @@
     </key>
     <column id="30" parent="14" name="no">
       <Position>1</Position>
-      <DataType>varchar(20)|0</DataType>
+      <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
+      <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
     <column id="31" parent="14" name="type">
       <Position>2</Position>

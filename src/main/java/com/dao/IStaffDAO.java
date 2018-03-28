@@ -22,7 +22,7 @@ public interface IStaffDAO {
     void updateStaff(@Param("no") String no);
 
     // 查找员工信息
-    List<Staff> checkStaff(@Param("name") String name, @Param("no") String no, @Param("passwd") String passwd);
+    List<Staff> checkStaff(@Param("name") String name, @Param("no") String no, @Param("passwd") String passwd, @Param("birthday") String birthday);
 
     // 查询登录密码
     String queryPassWd(@Param("no") String no);
