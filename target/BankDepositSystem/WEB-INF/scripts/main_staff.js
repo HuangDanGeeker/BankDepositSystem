@@ -98,26 +98,14 @@ function submitAnyTimeDeposit() {
     var nums = $('#anyTimeDealPanel #custmNums').val();
     var type = 1;
     var dueTime = $('#anyTimeDealPanel #dueTime').val();
+    if(nums > 0){
+        depositAjax(custmNo, creditCardNum, nums, type, dueTime);
+    }else if(nums < 0){
+        requireAjax(custmNo, creditCardNum, nums);
+    }else{
+        return;
+    }
 
-    $.ajax({
-        url:"http://localhost:8080/BankDepositSystem/staff/deposit/"+custmNo+"/"+creditCardNum+"/"+nums+"/"+type+"/"+dueTime,
-        dataType:'jsonp',
-        processData: true,
-        type:'put',
-        success:function(){},
-        error:function(XMLHttpRequest, textStatus, errorThrown) {
-            var result = eval("("+XMLHttpRequest.responseText+")");
-            if(result.status == "success"){
-                $('#infoModal .modal-body').text("your request is executed successfully");
-                $('#infoModal .modal-title').text("Deposit Success");
-                $('#infoModal').modal('show');
-            }else{
-                $('#infoModal .modal-body').text(result.reason);
-                $('#infoModal .modal-title').text("Deposit Error");
-                $('#infoModal').modal('show');
-            }
-        }
-    });
 }
 
 
@@ -133,26 +121,14 @@ function submitSpecificDeposit() {
     console.log(type);
     console.log(dueTime);
 
+    if(nums > 0){
+        depositAjax(custmNo, creditCardNum, nums, type, dueTime);
+    }else if(nums < 0){
+        requireAjax(custmNo, creditCardNum, nums);
+    }else{
+        return;
+    }
 
-    $.ajax({
-        url:"http://localhost:8080/BankDepositSystem/staff/deposit/"+custmNo+"/"+creditCardNum+"/"+nums+"/"+type+"/"+dueTime,
-        dataType:'jsonp',
-        processData: true,
-        type:'get',
-        success:function(){
-        },
-        error:function(XMLHttpRequest, textStatus, errorThrown) {
-            var result = eval("("+XMLHttpRequest.responseText+")");
-            if(result.status == "success"){
-                $('#infoModal .modal-body').text("your request is executed successfully");
-                $('#infoModal .modal-title').text("Deposit Success");
-                $('#infoModal').modal('show');
-            }else{
-                $('#infoModal .modal-body').text(result.reason);
-                $('#infoModal .modal-title').text("Deposit Error");
-                $('#infoModal').modal('show');
-            }
-        }});
 }
 
 function checkCustmName(param){
@@ -185,6 +161,49 @@ function checkCustmName(param){
     });
 }
 
+
+function depositAjax(custmNo, creditCardNum, nums, type, dueTime) {
+    $.ajax({
+        url:"http://localhost:8080/BankDepositSystem/staff/deposit/"+custmNo+"/"+creditCardNum+"/"+nums+"/"+type+"/"+dueTime,
+        dataType:'jsonp',
+        processData: true,
+        type:'get',
+        success:function(){
+        },
+        error:function(XMLHttpRequest, textStatus, errorThrown) {
+            var result = eval("("+XMLHttpRequest.responseText+")");
+            if(result.status == "success"){
+                $('#infoModal .modal-body').text("your request is executed successfully");
+                $('#infoModal .modal-title').text("Deposit Success");
+                $('#infoModal').modal('show');
+            }else{
+                $('#infoModal .modal-body').text(result.reason);
+                $('#infoModal .modal-title').text("Deposit Error");
+                $('#infoModal').modal('show');
+            }
+        }});
+}
+function requireAjax(custmNo, creditCardNum, nums) {
+    $.ajax({
+        url:"http://localhost:8080/BankDepositSystem/staff/require/"+custmNo+"/"+creditCardNum+"/"+nums,
+        dataType:'jsonp',
+        processData: true,
+        type:'get',
+        success:function(){
+        },
+        error:function(XMLHttpRequest, textStatus, errorThrown) {
+            var result = eval("("+XMLHttpRequest.responseText+")");
+            if(result.status == "success"){
+                $('#infoModal .modal-body').text("your request is executed successfully");
+                $('#infoModal .modal-title').text("Require Success");
+                $('#infoModal').modal('show');
+            }else{
+                $('#infoModal .modal-body').text(result.reason);
+                $('#infoModal .modal-title').text("Require Error");
+                $('#infoModal').modal('show');
+            }
+        }});
+}
 
 function fillCustmInfomation(param) {
 

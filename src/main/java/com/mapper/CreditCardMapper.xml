@@ -16,9 +16,12 @@
     <insert id="createCreditCard">
         INSERT INTO creditcard_#{custmNo} VALUES (#{cardNo}, 0, CURRENTDATE());
     </insert>
-    <insert id="deposit">
+    <update id="deposit">
         UPDATE creditcard_${custmNo} SET nums=nums+${nums}, dutTime=#{dueTime, jdbcType=DATE} WHERE cardNo=#{cardNo}
-    </insert>
+    </update>
+    <update id="require">
+        UPDATE creditcard_${custmNo} SET nums=nums-${nums}, dutTime=CURRENT_DATE() WHERE cardNo=#{cardNo}
+    </update>
     <select id="getCreditCardNo" resultType="java.lang.String">
         SELECT no from num_set where type='3';
     </select>

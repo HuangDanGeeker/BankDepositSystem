@@ -109,6 +109,28 @@ public class SttafOperationController {
         result.put("status", "success");
         return result;
     }
+    @RequestMapping("/require/{custmNo}/{creditCardNum}/{nums}")
+    @ResponseBody
+    public Map<String,String> require(@PathVariable String custmNo, @PathVariable String creditCardNum, @PathVariable Integer nums){
+        System.out.println("require");
+        System.out.println("cutmNo " + custmNo);
+        System.out.println("creditCardNum " + creditCardNum);
+        System.out.println("nums " + nums);
+        Map result = new HashMap<String, String>();
+
+        //检查是否到期
+        String dueTime = creditCardService.queryDueTime(custmNo, creditCardNum);
+        LocalDate dueDate = LocalDate.parse(dueTime);
+        if(!cheackDueTime(LocalDate.now(), dueDate)){
+            result.put("status", "failure");
+            result.put("reason", "invaild Time : dueTime is prior to today");
+            return result;
+        }
+        creditCardService.require(custmNo, creditCardNum, nums);
+
+        result.put("status", "success");
+        return result;
+    }
 
 
     private boolean cheackDueTime(LocalDate dueTime){
@@ -117,6 +139,13 @@ public class SttafOperationController {
             return false;
         }
         return true;
+    }
+    private boolean cheackDueTime(LocalDate requireTime, LocalDate dueTime){
+        LocalDate now = LocalDate.now();
+        if(requireTime.isAfter(dueTime)){
+            return true;
+        }
+        return false;
     }
 
 

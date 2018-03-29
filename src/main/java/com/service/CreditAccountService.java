@@ -25,6 +25,9 @@ public class CreditAccountService {
     public void deposit(String custmNo, String creditCardNo, Integer nums, String dutTime){
         creditCardDAO.deposit(custmNo, creditCardDAO.queryBasicIntrest(), creditCardNo, nums, dutTime);
     }
+    public void require(String custmNo, String creditCardNo, Integer nums){
+        creditCardDAO.require(custmNo, creditCardDAO.queryBasicIntrest(), creditCardNo, nums);
+    }
 
     // 生成信用卡号
     public String generateCreditCardNo(){
@@ -43,5 +46,8 @@ public class CreditAccountService {
     }
 
 
+    public String queryDueTime(String custmNo, String creditCardNo){
+        return creditCardDAO.queryDueTime(custmNo, creditCardNo);
+    }
 
 }
