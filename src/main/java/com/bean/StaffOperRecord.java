@@ -17,30 +17,6 @@ public class StaffOperRecord {
     String creditCardNo;
     Integer nums;
     String operDate;
-    public String getCreditCardNo() {
-        return creditCardNo;
-    }
-
-    public void setCreditCardNo(String creditCardNo) {
-        this.creditCardNo = creditCardNo;
-    }
-
-    public String getOperDate() {
-        return operDate;
-    }
-
-    public void setOperDate(String operDate) {
-        this.operDate = operDate;
-    }
-
-    public StaffOperRecord(){
-        operType = "1";
-        custmNo = "123";
-        custmName = "123";
-        nums = 10;
-        operDate = LocalDate.now().toString();
-    }
-
 
     public String getOperType() {
         return operType;
@@ -65,6 +41,15 @@ public class StaffOperRecord {
     public void setCustmName(String custmName) {
         this.custmName = custmName;
     }
+
+    public String getCreditCardNo() {
+        return creditCardNo;
+    }
+
+    public void setCreditCardNo(String creditCardNo) {
+        this.creditCardNo = creditCardNo;
+    }
+
     public Integer getNums() {
         return nums;
     }
@@ -72,6 +57,25 @@ public class StaffOperRecord {
     public void setNums(Integer nums) {
         this.nums = nums;
     }
+
+    public String getOperDate() {
+        return operDate;
+    }
+
+    public void setOperDate(String operDate) {
+        this.operDate = operDate;
+    }
+
+
+//    public StaffOperRecord(){
+//        operType = "1";
+//        custmNo = "123";
+//        custmName = "123";
+//        nums = 10;
+//        operDate = LocalDate.now().toString();
+//    }
+
+
 
 
 
