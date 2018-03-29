@@ -26,5 +26,8 @@
         <!--INSERT INTO recd_staff_${record.no} values(#{record.no}, #{record.operType}, #{record.custmNo}, #{record.custmName}, #{record.nums}, #{record.operDate})-->
     <!--</insert>-->
 
+    <update id="createStaffOperTable">
+        create TABLE recd_staff_${no}(operType VARCHAR(4), custmNo VARCHAR(20) NOT NULL, custmName VARCHAR(20) NOT NULL, creditCardNo varchar(20) NOT NULL ,nums INT, operDate VARCHAR(10));
+    </update>
 
 </mapper>

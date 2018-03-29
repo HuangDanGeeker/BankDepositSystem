@@ -9,9 +9,10 @@
         <result column="birthday" property="birthday"  jdbcType="VARCHAR" />
     </resultMap>
 
-    <insert id="insertStaff">
-        INSERT INTO staff values(#{name}, #{no}, #{passwd}, #{birthday},#{phone})
-    </insert>
+    <update id="insertStaff">
+        INSERT INTO staff values(#{name}, #{no}, #{passwd}, #{birthday},#{phone});
+
+    </update>
 
     <delete id="deleteStaff">
         DELETE FROM staff where no=#{no}
@@ -54,4 +55,6 @@
     <update id="updateNo">
         UPDATE num_set SET no=no+1 WHERE type=1;
     </update>
+
+
 </mapper>

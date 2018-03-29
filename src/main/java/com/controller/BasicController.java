@@ -1,6 +1,8 @@
 package com.controller;
 
+import com.service.CreditAccountService;
 import com.service.CustomerService;
+import com.service.StaffOperationService;
 import com.service.StaffService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
@@ -21,6 +23,10 @@ public class BasicController {
     private CustomerService customerService;
     @Resource
     private StaffService staffService;
+    @Resource
+    private CreditAccountService creditAccountService;
+    @Resource
+    private StaffOperationService staffOperationService;
 
 
 
@@ -62,7 +68,7 @@ public class BasicController {
 
     @RequestMapping("/regist/{registName}/{registRole}/{registPasswd}/{registBirthday}/{registPhone}/{registAddress}")
     @ResponseBody
-    public Map<String, String> login(@PathVariable String registName, @PathVariable String registRole,@PathVariable String registPasswd, @PathVariable String registBirthday, @PathVariable String registPhone, @PathVariable String registAddress){
+    public Map<String, String> regist(@PathVariable String registName, @PathVariable String registRole,@PathVariable String registPasswd, @PathVariable String registBirthday, @PathVariable String registPhone, @PathVariable String registAddress){
         System.out.println("regist");
         System.out.println("registName " + registName);
         System.out.println("registRole" + registRole);
@@ -74,22 +80,24 @@ public class BasicController {
         Map result = new HashMap<String, String>();
         if(registRole.equalsIgnoreCase("customer")){
             //已经存在相同用户名用户生日的用户账号
-            if(customerService.checkCustomer(null, registName,null,registBirthday)){
+            if(customerService.checkCustomer(null, null,registName, registBirthday)){
                 result.put("registStatus", "failure");
                 result.put("reason", "the customer is already exist!");
                 return result;
             }
             registNo = customerService.generateNo();
             customerService.regist(registName, registNo, registPasswd, registBirthday, registPhone, registAddress);
+            creditAccountService.createCreditCardTable(registNo.toString());
         }else if(registRole.equalsIgnoreCase("staff")){
             //已经存在相同柜员名柜员生日的柜员账号
-            if(staffService.checkStaff(null, registName,null,registBirthday)){
+            if(staffService.checkStaff(null, null,registName, registBirthday)){
                 result.put("registStatus", "failure");
                 result.put("reason", "the staff is already exist!");
                 return result;
             }
             registNo = staffService.generateNo();
             staffService.regist(registName, registNo, registPasswd, registBirthday, registPhone);
+            staffOperationService.createStaffOperTable(registNo.toString());
         }
 
         result.put("registStatus", "success");

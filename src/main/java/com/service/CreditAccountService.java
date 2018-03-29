@@ -38,6 +38,9 @@ public class CreditAccountService {
     public List<CreditCard> queryCreditCardRecord(String custmNo){
         return creditCardDAO.queryCreditCardRecord(custmNo);
     }
+    public void createCreditCardTable(String custmNo){
+        creditCardDAO.createCreditCardTable(custmNo);
+    }
 
 
 

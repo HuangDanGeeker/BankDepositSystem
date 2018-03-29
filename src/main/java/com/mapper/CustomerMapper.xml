@@ -10,9 +10,10 @@
         <result column="birthday" property="birthday" jdbcType="INTEGER"/>
     </resultMap>
 
-    <insert id="insertCustomer">
-        INSERT INTO customer values(#{name}, #{no}, #{passwd}, #{birthday}, #{phone}, #{address})
-    </insert>
+    <update id="insertCustomer">
+        INSERT INTO customer values(#{name}, #{no}, #{passwd}, #{birthday}, #{phone}, #{address});
+
+    </update>
 
     <delete id="deleteCustomer">
         DELETE FROM customer where no=#{no}

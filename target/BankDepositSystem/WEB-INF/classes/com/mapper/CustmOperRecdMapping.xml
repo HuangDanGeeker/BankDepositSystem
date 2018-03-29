@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.ICustmOperRecdDAO">
+    <resultMap id="CustmOperRecord" type="com.bean.CustmOperRecord">
+        <result column="no" property="no" jdbcType="VARCHAR"/>
+        <result column="operType" property="operType" jdbcType="INTEGER"/>
+        <result column="dealerNo" property="dealerNo" jdbcType="VARCHAR"/>
+        <result column="dealerName" property="dealerName" jdbcType="VARCHAR"/>
+        <result column="nums" property="nums" jdbcType="INTEGER"/>
+        <result column="operDate" property="operDate" jdbcType="DATE"/>
+    </resultMap>
+
+    <!--查询记录-->
+    <!--<select id="queryRecordByBoth">-->
+        <!--SELECT * FROM recd_custm_${no} where operType=#{operType} and operDate <= #{endDate} and operDate >= #{startDate}-->
+    <!--</select>-->
+
+    <!--插入记录-->
+    <!--<insert id="insertRecord" parameterMap="com.bean.CustmOperRecord">-->
+        <!--INSERT  INTO recd_custm_${record.no} VALUES(#{record.no}, #{record.operType}, #{record.dealerNo}, #{record.dealerName}, #{nums}, #{operDate})-->
+    <!--</insert>-->
+</mapper>

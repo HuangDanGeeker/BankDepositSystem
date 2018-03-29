@@ -12,6 +12,8 @@ import java.util.List;
 @Repository
 public interface ICreditCardDAO {
 
+    void createCreditCardTable(@Param("no") String no);
+
     //创建客户信用卡账号
     void createCreditCard(@Param("custmNo") String custmNo, @Param("cardNo") String cardNo);
 

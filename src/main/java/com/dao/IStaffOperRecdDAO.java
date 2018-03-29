@@ -21,4 +21,5 @@ public interface IStaffOperRecdDAO {
     //添加纪录
 //    void insertRecord(@Param("record") StaffOperRecord record);
 
+    void createStaffOperTable(@Param("no") String no);
 }

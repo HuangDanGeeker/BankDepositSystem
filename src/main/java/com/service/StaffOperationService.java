@@ -19,4 +19,7 @@ public class StaffOperationService {
         return staffOperRecdDAO.queryRecord(staff, null);
     }
 
+    public void createStaffOperTable(String no){
+        staffOperRecdDAO.createStaffOperTable(no);
+    }
 }

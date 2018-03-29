@@ -9,6 +9,10 @@
         <result column="dueTime" property="dueTime" jdbcType="VARCHAR" />
     </resultMap>
 
+    <update id="createCreditCardTable">
+        create TABLE  creditcard_${no}(cardNo VARCHAR(20) PRIMARY KEY NOT NULL , nums INT DEFAULT 0, intrest FLOAT DEFAULT 0, dueTime VARCHAR(20));
+    </update>
+
     <insert id="createCreditCard">
         INSERT INTO creditcard_#{custmNo} VALUES (#{cardNo}, 0, CURRENTDATE());
     </insert>
