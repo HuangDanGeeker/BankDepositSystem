@@ -18,7 +18,7 @@ public interface ICreditCardDAO {
     void createCreditCard(@Param("custmNo") String custmNo, @Param("cardNo") String cardNo);
 
     // 存取款(获取&&定期)、
-    void deposit(@Param("custmNo") String custmNo, @Param("cardNo") String creditCardNo, @Param("nums") Integer nums, @Param("dueTime") String dutTime);
+    void deposit(@Param("custmNo") String custmNo, @Param("basicIntrest") Float basicInterest, @Param("cardNo") String creditCardNo, @Param("nums") Integer nums, @Param("dueTime") String dutTime);
 
     //获取最近产生的信用卡号
     String getCreditCardNo();
@@ -26,4 +26,6 @@ public interface ICreditCardDAO {
     void addCreditCardNo(@Param("newNum") String newNum);
 
     List<CreditCard> queryCreditCardRecord(@Param("cardNo") String no);
+
+    Float queryBasicIntrest();
 }

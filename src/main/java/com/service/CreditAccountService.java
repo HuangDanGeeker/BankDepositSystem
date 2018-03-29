@@ -23,7 +23,7 @@ public class CreditAccountService {
     }
 
     public void deposit(String custmNo, String creditCardNo, Integer nums, String dutTime){
-        creditCardDAO.deposit(custmNo, creditCardNo, nums, dutTime);
+        creditCardDAO.deposit(custmNo, creditCardDAO.queryBasicIntrest(), creditCardNo, nums, dutTime);
     }
 
     // 生成信用卡号

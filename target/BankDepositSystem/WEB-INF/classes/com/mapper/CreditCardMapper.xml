@@ -10,14 +10,14 @@
     </resultMap>
 
     <update id="createCreditCardTable">
-        create TABLE  creditcard_${no}(cardNo VARCHAR(20) PRIMARY KEY NOT NULL , nums INT DEFAULT 0, intrest FLOAT DEFAULT 0, dueTime VARCHAR(20));
+        create TABLE  creditcard_${no}(cardNo VARCHAR(20) PRIMARY KEY NOT NULL , nums FLOAT DEFAULT 0, intrest FLOAT DEFAULT 0, dueTime VARCHAR(20));
     </update>
 
     <insert id="createCreditCard">
-        INSERT INTO creditcard_#{custmNo} VALUES (#{cardNo}, 0, CURRENTDATE());
+        INSERT INTO creditcard_#{custmNo} VALUES (#{cardNo}, 0, 0, CURRENTDATE());
     </insert>
     <insert id="deposit">
-        UPDATE creditcard_${custmNo} SET nums=nums+${nums}, dutTime=#{dueTime, jdbcType=DATE} WHERE cardNo=#{cardNo}
+        UPDATE creditcard_${custmNo} SET nums = nums * (1+${basicIntrest}) + ${nums}*(1+intrest), dueTime=#{dueTime, jdbcType=DATE} WHERE cardNo=#{cardNo}
     </insert>
     <select id="getCreditCardNo" resultType="java.lang.String">
         SELECT no from num_set where type='3';
@@ -28,4 +28,10 @@
     <select id="queryCreditCardRecord" resultMap="creditCard">
         select * from creditcard_${cardNo};
     </select>
+
+    <select id="queryBasicIntrest" resultType="java.lang.Float">
+        SELECT rate FROM rate_table WHERE type='00';
+    </select>
+
+
 </mapper>
