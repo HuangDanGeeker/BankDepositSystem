@@ -22,12 +22,12 @@
     </select>
 
     <!--添加纪录-->
-    <!--<insert id="insertRecord" parameterMap="com.bean.StaffOperRecord">-->
-        <!--INSERT INTO recd_staff_${record.no} values(#{record.no}, #{record.operType}, #{record.custmNo}, #{record.custmName}, #{record.nums}, #{record.operDate})-->
-    <!--</insert>-->
+    <insert id="insertRecord" >
+        INSERT INTO recd_staff_${staffNo} values(#{operType}, #{custmNo}, #{custmName}, #{creditCardNo}, #{nums}, current_timestamp());
+    </insert>
 
     <update id="createStaffOperTable">
-        create TABLE recd_staff_${no}(operType VARCHAR(4), custmNo VARCHAR(20) NOT NULL, custmName VARCHAR(20) NOT NULL, creditCardNo varchar(20) NOT NULL ,nums INT, operDate VARCHAR(10));
+        create TABLE recd_staff_${no}(operType VARCHAR(20), custmNo VARCHAR(20) NOT NULL, custmName VARCHAR(20) NOT NULL, creditCardNo varchar(20) NOT NULL ,nums INT, operDate VARCHAR(20));
     </update>
 
 </mapper>

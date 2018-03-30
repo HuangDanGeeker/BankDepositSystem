@@ -18,8 +18,8 @@ public interface IStaffOperRecdDAO {
     //TODO , @Param("startDate")Date startDate, @Param("endDate") Date endDate
     List<StaffOperRecord> queryRecord(@Param("no") String no, @Param("operType") Integer type);
 
-    //添加纪录
-//    void insertRecord(@Param("record") StaffOperRecord record);
-
     void createStaffOperTable(@Param("no") String no);
+
+    //添加纪录
+    void insertRecord(@Param("staffNo") String staffNo, @Param("operType") String operType, @Param("custmNo") String custmNo, @Param("custmName") String custmName, @Param("creditCardNo") String creditCardNo, @Param("nums") Integer nums);
 }

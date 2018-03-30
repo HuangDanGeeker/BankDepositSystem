@@ -44,6 +44,10 @@
 
     </select>
 
+    <select id="queryCustomerName" resultType="java.lang.String">
+        select name FROM customer where no = #{no};
+    </select>
+
     <update id="updatePassWd">
         UPDATE customer set passwd=#{passwd} WHERE no=#{no}
     </update>

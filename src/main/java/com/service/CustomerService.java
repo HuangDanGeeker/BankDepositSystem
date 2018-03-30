@@ -24,6 +24,9 @@ public class CustomerService {
        List<Customer> customerList = customerDAO.queryCustomer(custmNo, null, custmName, null);
        return customerList;
     }
+    public String queryCustomerName(String custmNo){
+       return customerDAO.queryCustomerName(custmNo);
+    }
 
     public boolean checkCustomer(String custmNo){
 

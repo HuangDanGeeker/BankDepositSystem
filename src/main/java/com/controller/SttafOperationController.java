@@ -7,6 +7,7 @@ import com.service.CustomerService;
 import com.service.StaffOperationService;
 import com.service.StaffService;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -36,7 +37,7 @@ public class SttafOperationController {
 
     @RequestMapping("/createcreditcard/{custmNo}/{cardNo}")
     @ResponseBody
-    public Map<String,String> createcreditcard(@PathVariable String custmNo, @PathVariable String cardNo){
+    public Map<String,String> createcreditcard(@CookieValue("userNo") String userNo, @PathVariable String custmNo, @PathVariable String cardNo){
         System.out.println("createcreditcard");
         System.out.println("cutmNo " + custmNo);
         System.out.println("creditCardNum " + cardNo);
@@ -45,6 +46,9 @@ public class SttafOperationController {
 
         Map result = new HashMap<String, String>();
         result.put("status", "success");
+        //Staff operation record
+        staffOperationService.insertRecord(userNo, "CreateCreditCard", custmNo, customerService.queryCustomerName(custmNo), cardNo, null);
+
         return result;
     }
 
@@ -64,7 +68,7 @@ public class SttafOperationController {
 
     @RequestMapping("/deposit/{custmNo}/{creditCardNum}/{nums}/{type}/{dueTime}")
     @ResponseBody
-    public Map<String,String> deposit(@PathVariable String custmNo, @PathVariable String creditCardNum, @PathVariable Integer nums, @PathVariable Integer type,@PathVariable String dueTime){
+    public Map<String,String> deposit(@CookieValue("userNo") String userNo, @PathVariable String custmNo, @PathVariable String creditCardNum, @PathVariable Integer nums, @PathVariable Integer type,@PathVariable String dueTime){
         System.out.println("deposit");
         System.out.println("cutmNo " + custmNo);
         System.out.println("creditCardNum " + creditCardNum);
@@ -107,6 +111,8 @@ public class SttafOperationController {
 
 
         result.put("status", "success");
+        //Staff operation record
+        staffOperationService.insertRecord(userNo, "deposit", custmNo, customerService.queryCustomerName(custmNo), creditCardNum, nums);
         return result;
     }
     @RequestMapping("/require/{custmNo}/{creditCardNum}/{nums}")
@@ -186,7 +192,16 @@ public class SttafOperationController {
         result.put("status", "success");
         result.put("list", list);
         result.put("count", list.size());
+        //Staff operation record
+        staffOperationService.insertRecord(staffNo, "queryRecord", null, null, null, null);
         return result;
+
+    }
+
+    // 对柜员的每次操作进行记录
+    private void takeRecord(String staffNo, String operType, String custmNo, String custmName, String creditCardNo, Integer nums){
+        System.out.println("private takeRecord");
+        staffOperationService.insertRecord(staffNo, operType, custmNo, custmName, creditCardNo, nums);
 
     }
 
