@@ -69,6 +69,9 @@ function submitCreateCredit(){
     //客户输入完整性检查
     varifyCustomInput(custmNo, creditCardNo, custmBirthday, custmPhone, custmAddress);
 
+    //TODO 检查用户的确认信息
+
+
     $.ajax({
         url:"http://localhost:8080/BankDepositSystem/staff/createcreditcard/"+custmNo+"/"+creditCardNum,
         dataType:'jsonp',
@@ -96,6 +99,8 @@ function varifyCustomInput(custmNo, creditCardNo, custmBirthday, custmPhone, cus
 
 function submitAnyTimeDeposit() {
 
+    //TODO 检查用户的确认信息
+
     var custmNo = $('#anyTimeDealPanel #custmNo').val();
     var creditCardNum = $('#anyTimeDealPanel #creditCardNum').val();
     var nums = $('#anyTimeDealPanel #custmNums').val();
@@ -113,6 +118,9 @@ function submitAnyTimeDeposit() {
 
 
 function submitSpecificDeposit() {
+
+    //TODO 检查用户的确认信息
+
     var custmNo = $('#scheduleDealPanel #custmNo').val();
     var creditCardNum = $('#scheduleDealPanel #creditCardNum').val();
     var nums = $('#scheduleDealPanel #custmNums').val();
@@ -203,12 +211,26 @@ function generateCreditNum() {
 
 function queryCreditCardInfo() {
     $('#custmHistoryPanel').slideDown();
-    $('#infoModal .modal-body').html("please input your password to confirm your Operation<br> <form class='form'> <div class='form-group col-sm-8'> <input value='090215022'' type='password' id='comfirmBtn' class='form-control' placeholder='please input your password . . .' /></div><button type='button' class='btn btn-success' onclick='confirmQueryInfo()'>查询</button> </form>");
+
+    //请求用户操作确认
+    $('#infoModal .modal-body').html("please input your password to confirm your Operation<br> <form class='form'> <div class='form-group col-sm-8'> <input  type='password' id='comfirmedCustmPW' class='form-control' placeholder='please input your password . . .' /></div><button type='button' class='btn btn-success' onclick='processQueryCustmCridetCardInfo()'>查询</button> </form>");
     $('#infoModal .modal-title').text("Confirm Your Operation");
     $('#infoModal').modal('show');
+
+
+
 }
 
-function confirmQueryInfo(){
+function processQueryCustmCridetCardInfo() {
+
+    //检查用户的确认密码
+    if ($('#comfirmedCustmPW').val() != $.cookie("userPasswd")) {
+        $('#infoModal').modal('toggle');
+        $('#infoModal .modal-body').html("the PassWord you input is NOT correct, please try again");
+        $('#infoModal .modal-title').text("Incorrect PassWord");
+        $('#infoModal').modal('show');
+        return;
+    }
     var custmNo = $('#userNo').text();
     $.ajax({
         url:"http://localhost:8080/BankDepositSystem/staff/queryCustmIntrest/"+custmNo,
@@ -239,4 +261,5 @@ function confirmQueryInfo(){
         }
     });
 }
+
 

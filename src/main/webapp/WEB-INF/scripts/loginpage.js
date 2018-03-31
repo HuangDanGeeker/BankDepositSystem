@@ -31,6 +31,7 @@ function login() {
                     window.location.href = "http://localhost:8080/BankDepositSystem/main/staff";
                 }else{
                     $.cookie("loginRole", "custm");
+                    $.cookie("userPasswd", userPasswd);
                     window.location.href = "http://localhost:8080/BankDepositSystem/main/custm";
                 }
             }else{  //登录失败
