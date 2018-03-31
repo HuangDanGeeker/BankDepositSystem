@@ -19,19 +19,6 @@ window.onload = function () {
     $('#scheduleDealPanel #custmName').bind('input', function(param){checkCustmName(param);});
     //绑定--按照选择的用户账号返回用户的详细信息
     $('#createCustomerPanel #custmNo').change(function(param){fillCustmInfomation(param);});
-    //绑定--查询客户&&柜员操作记录
-    $('#staffHistoryRadio').click( function () {
-        if($('#staffHistoryPanel').css('display') == 'block'){
-            return;
-        }
-        queryHistoryView();
-        qeruyStaffOperRecrd();
-    });
-    $('#custmHistoryRadio').click( function () {
-        if($('3custmHistoryPanel').css('display') == 'block'){
-            return;
-        }
-        queryHistoryView();});
 }
 
 
@@ -52,7 +39,7 @@ function scheduleDeal() {
 }
 function accountDetail() {
     displayPanel("none", "none", "none", "block");
-    $('#staffHistoryRadio').trigger('click');
+    queryCreditCardInfo();
 }
 
 function displayPanel(b1, b2, b3, b4) {
@@ -257,48 +244,15 @@ function generateCreditNum() {
 
 }
 
-function queryHistoryView(){
-    console.log("herherh");
-    $('#staffHistoryPanel').slideToggle();
-    $('#custmHistoryPanel').slideToggle();
+function queryCreditCardInfo() {
+    $('#custmHistoryPanel').slideDown();
+    $('#infoModal .modal-body').html("please input your password to confirm your Operation<br> <form class='form'> <div class='form-group col-sm-8'> <input value='090215022'' type='password' id='comfirmBtn' class='form-control' placeholder='please input your password . . .' /></div><button type='button' class='btn btn-success' onclick='confirmQueryInfo()'>查询</button> </form>");
+    $('#infoModal .modal-title').text("Confirm Your Operation");
+    $('#infoModal').modal('show');
 }
 
-
-function qeruyStaffOperRecrd(){
-
-    var staffNo = $('#userNo').text();
-    $.ajax({
-        url:"http://localhost:8080/BankDepositSystem/staff/queryStaffOperRecord/"+staffNo,
-        dataType:'jsonp',
-        processData: true,
-        type:'put',
-        success:function(){},
-        error:function(XMLHttpRequest, textStatus, errorThrown) {
-            if(XMLHttpRequest.status != 200){
-                $('#infoModal .modal-body').html('连接失败<br>请检查您的网络后,尝试刷新以解决错误');
-                $('#infoModal .modal-title').text("Internet Error");
-                $('#infoModal').modal('show');
-                return;
-            }
-            var result = eval("("+XMLHttpRequest.responseText+")");
-            if(result.status == "error"){
-                $('#infoModal .modal-body').text(result.reason);
-                $('#infoModal .modal-title').text("Query Error");
-                $('#infoModal').modal('show');
-                return;
-            }
-            $('#staffHistoryPanel tbody tr').remove();
-            var parent = $('#staffHistoryPanel tbody');
-            for(var i = 0; i < result.list.length; i++){
-                parent.append("<tr><td>"+result.list[i].custmName+"</td><td>"+result.list[i].custmNo+"</td><td>"+result.list[i].creditCardNo+"</td><td>"+result.list[i].nums+"</td><td>"+result.list[i].operDate+"</td></tr>");
-            }
-        }
-    });
-}
-
-function qeruyCustmOperRecrd(){
-
-    var custmNo = $('#accountDetailPanel #custmNo').val();
+function confirmQueryInfo(){
+    var custmNo = $('#userNo').text();
     $.ajax({
         url:"http://localhost:8080/BankDepositSystem/staff/queryCustmIntrest/"+custmNo,
         dataType:'jsonp',
@@ -312,6 +266,7 @@ function qeruyCustmOperRecrd(){
                 $('#infoModal').modal('show');
                 return;
             }
+            $('#infoModal').modal('toggle');
             var result = eval("("+XMLHttpRequest.responseText+")");
             if(result.status == "error"){
                 $('#infoModal .modal-body').text(result.reason);
