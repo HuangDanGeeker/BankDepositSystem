@@ -14,7 +14,6 @@ window.onload = function () {
 
     //绑定--动态按照用户名返回用户账号List
     //绑定--按照选择的用户账号返回用户的详细信息
-    $('#createCustomerPanel #custmNo').change(function(param){fillCustmInfomation(param);});
 
     //绑定点击刷新&&重新请求客户的信用卡信息
     $('#custmHistoryRadio').click( function () {
@@ -61,8 +60,14 @@ function pasteCreditNum() {
 
 function submitCreateCredit(){
 
-    var custmNo = $('#createCustomerPanel #custmNo').find("option:selected").text();
-    var creditCardNum= $('#createCustomerPanel #creditCardNum').val();
+    var custmNo = $('#createCustomerPanel #custmNo').val();
+    var creditCardNo = $('#createCustomerPanel #creditCardNum').val();
+    var custmBirthday = $('#createCustomerPanel #custmBirthday').val();
+    var custmPhone = $('#createCustomerPanel #custmPhone').val();
+    var custmAddress = $('#createCustomerPanel #custmAddress').val();
+
+    //客户输入完整性检查
+    varifyCustomInput(custmNo, creditCardNo, custmBirthday, custmPhone, custmAddress);
 
     $.ajax({
         url:"http://localhost:8080/BankDepositSystem/staff/createcreditcard/"+custmNo+"/"+creditCardNum,
@@ -77,6 +82,16 @@ function submitCreateCredit(){
         }
     });
 
+}
+
+
+function varifyCustomInput(custmNo, creditCardNo, custmBirthday, custmPhone, custmAddress){
+    if(custmNo == "" || creditCardNo == "" || custmBirthday == "" ||
+        custmPhone == "" || custmAddress == ""){
+        $('#infoModal .modal-body').text("please make sure that you have input all the required informations and all of them are correct");
+        $('#infoModal .modal-title').text("Invalid Input");
+        $('#infoModal').modal('show');
+    }
 }
 
 function submitAnyTimeDeposit() {
@@ -163,39 +178,10 @@ function requireAjax(custmNo, creditCardNum, nums) {
         }});
 }
 
-function fillCustmInfomation(param) {
-
-    var parent = $(param.currentTarget).parentsUntil('#operatePanel')[3];
-    var userNameInput = $(parent).find('#custmName')[0];
-    var userNo = $(param.currentTarget).val();
-    var userName = $(userNameInput).val();
-    console.log("userName " + userName);
-    console.log("userNo " + userNo);
-    $.ajax({
-        url:"http://localhost:8080/BankDepositSystem/checkUser/"+userName+"/"+userNo,
-        dataType:'jsonp',
-        processData: true,
-        type:'put',
-        success:function(){},
-        error:function(XMLHttpRequest, textStatus, errorThrown) {
-            if(XMLHttpRequest.status != 200){
-                $('#infoModal .modal-body').html('连接失败<br>请检查您的网络后,尝试刷新以解决错误');
-                $('#infoModal .modal-title').text("Login Error");
-                $('#infoModal').modal('show');
-                return;
-            }
-            var result = eval("("+XMLHttpRequest.responseText+")");
-            console.log(result);
-            $('#createCustomerPanel #custmBirthday').val(result.custm['birthday']);
-            $('#createCustomerPanel #custmPhone').val(result.custm['phone']);
-            $('#createCustomerPanel #custmAddress').val(result.custm['address']);
-        }
-    });
-
-}
 
 function generateCreditNum() {
 
+    //TODO unsafe request
     $.ajax({
         url:"http://localhost:8080/BankDepositSystem/staff/generateCreditCardNo",
         dataType:'jsonp',
