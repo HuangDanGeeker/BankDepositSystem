@@ -1,0 +1,94 @@
+#cmdline{
+    height: 50px;
+    background-color: rgba(100, 149, 237, .8);
+    margin-top: 1%;
+}
+
+#createCustmDiv{
+    background-color: red;
+    height: 50px;
+    width: 10%;
+    float:left;
+    margin-left: 20%;
+    margin-right: 2.5%;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 10px 10px;
+}
+
+#anyTimeDealDiv{
+    background-color: red;
+    height: 50px;
+    width: 12%;
+    float:left;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 10px 10px;
+}
+
+#scheduleDealDiv{
+
+    background-color: red;
+    height: 50px;
+    width: 12%;
+    float:left;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    text-align: center;
+    line-height: 50px;
+    border-radius: 10px 10px;
+}
+#accountDetailDiv{
+    background-color: red;
+    height: 50px;
+    width: 10%;
+    float:left;
+    margin-left: 2.5%;
+    /*margin-right: 5%;*/
+    text-align: center;
+    line-height: 50px;
+    border-radius: 10px 10px;
+}
+
+#operatePanel{
+    background-color: rgba(100, 149, 237, 0.8);
+    height: 400px;
+    margin-top: 1%;
+    text-align: center;
+    border-radius: 10px 10px;
+}
+
+
+#createCustomerPanel{
+    margin-top: 10px;
+    display: block;
+}
+
+#anyTimeDealPanel{
+    margin-top: 10px;
+    display: none;
+}
+#scheduleDealPanel{
+    margin-top: 10px;
+    display: none;
+}
+#accountDetailPanel{
+    margin-top: 10px;
+    display: none;
+}
+
+#custmCreditNum{
+    float: left;
+    width:70%;
+}
+
+#copyCreditNumBtn{
+    float: left;
+    margin-left:2%;
+}
+
+#accountDetailPanel {
+    font-size: 14px;
+}
