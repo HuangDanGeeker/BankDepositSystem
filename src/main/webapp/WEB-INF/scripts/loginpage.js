@@ -35,7 +35,7 @@ function login() {
                 }
             }else{  //登录失败
                 $('#infoModal .modal-body').html('登录失败<br>请检查您的账号和密码');
-                $('#infoModal .modal-title').text("Login Error");
+                $('#infoModal .modal-title').html("Login Error");
                 $('#infoModal').modal('show');
             }
         }});

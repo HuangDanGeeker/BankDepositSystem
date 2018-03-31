@@ -221,7 +221,7 @@ function fillCustmInfomation(param) {
         success:function(){},
         error:function(XMLHttpRequest, textStatus, errorThrown) {
             if(XMLHttpRequest.status != 200){
-                $('#infoModal .modal-body').text('连接失败<br>请检查您的网络后,尝试刷新以解决错误');
+                $('#infoModal .modal-body').html('连接失败<br>请检查您的网络后,尝试刷新以解决错误');
                 $('#infoModal .modal-title').text("Login Error");
                 $('#infoModal').modal('show');
                 return;
@@ -246,7 +246,7 @@ function generateCreditNum() {
         success:function(){},
         error:function(XMLHttpRequest, textStatus, errorThrown) {
             if(XMLHttpRequest.status != 200){
-                $('#infoModal .modal-body').text('连接失败<br>请检查您的网络后,尝试刷新以解决错误');
+                $('#infoModal .modal-body').html('连接失败<br>请检查您的网络后,尝试刷新以解决错误');
                 $('#infoModal .modal-title').text("Login Error");
                 $('#infoModal').modal('show');
                 return;
@@ -275,7 +275,7 @@ function qeruyStaffOperRecrd(){
         success:function(){},
         error:function(XMLHttpRequest, textStatus, errorThrown) {
             if(XMLHttpRequest.status != 200){
-                $('#infoModal .modal-body').text('连接失败<br>请检查您的网络后,尝试刷新以解决错误');
+                $('#infoModal .modal-body').html('连接失败<br>请检查您的网络后,尝试刷新以解决错误');
                 $('#infoModal .modal-title').text("Internet Error");
                 $('#infoModal').modal('show');
                 return;
@@ -307,7 +307,7 @@ function qeruyCustmOperRecrd(){
         success:function(){},
         error:function(XMLHttpRequest, textStatus, errorThrown) {
             if(XMLHttpRequest.status != 200){
-                $('#infoModal .modal-body').text('连接失败<br>请检查您的网络后,尝试刷新以解决错误');
+                $('#infoModal .modal-body').html('连接失败<br>请检查您的网络后,尝试刷新以解决错误');
                 $('#infoModal .modal-title').text("Internet Error");
                 $('#infoModal').modal('show');
                 return;
