@@ -73,7 +73,7 @@ function submitCreateCredit(){
 
 
     $.ajax({
-        url:"http://localhost:8080/BankDepositSystem/staff/createcreditcard/"+custmNo+"/"+creditCardNum,
+        url:"http://localhost:8080/BankDepositSystem/custm/createcreditcard/"+custmNo+"/"+creditCardNum,
         dataType:'jsonp',
         processData: true,
         type:'put',
@@ -145,7 +145,7 @@ function submitSpecificDeposit() {
 
 function depositAjax(custmNo, creditCardNum, nums, type, dueTime) {
     $.ajax({
-        url:"http://localhost:8080/BankDepositSystem/staff/deposit/"+custmNo+"/"+creditCardNum+"/"+nums+"/"+type+"/"+dueTime,
+        url:"http://localhost:8080/BankDepositSystem/custm/deposit/"+custmNo+"/"+creditCardNum+"/"+nums+"/"+type+"/"+dueTime,
         dataType:'jsonp',
         processData: true,
         type:'get',
@@ -166,7 +166,7 @@ function depositAjax(custmNo, creditCardNum, nums, type, dueTime) {
 }
 function requireAjax(custmNo, creditCardNum, nums) {
     $.ajax({
-        url:"http://localhost:8080/BankDepositSystem/staff/require/"+custmNo+"/"+creditCardNum+"/"+nums,
+        url:"http://localhost:8080/BankDepositSystem/custm/require/"+custmNo+"/"+creditCardNum+"/"+nums,
         dataType:'jsonp',
         processData: true,
         type:'get',
@@ -191,7 +191,7 @@ function generateCreditNum() {
 
     //TODO unsafe request
     $.ajax({
-        url:"http://localhost:8080/BankDepositSystem/staff/generateCreditCardNo",
+        url:"http://localhost:8080/BankDepositSystem/custm/generateCreditCardNo",
         dataType:'jsonp',
         processData: true,
         type:'put',
@@ -233,7 +233,7 @@ function processQueryCustmCridetCardInfo() {
     }
     var custmNo = $('#userNo').text();
     $.ajax({
-        url:"http://localhost:8080/BankDepositSystem/staff/queryCustmIntrest/"+custmNo,
+        url:"http://localhost:8080/BankDepositSystem/custm/queryCustmIntrest/"+custmNo,
         dataType:'jsonp',
         processData: true,
         type:'put',
