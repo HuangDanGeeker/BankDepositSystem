@@ -11,9 +11,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="04f700b1-4159-49cf-ad17-30584b3ecf4f" name="Default" comment="failed to complete 'MyBatisHandler'">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dataSources/385214fc-f780-4560-91ed-06c074010f56.xml" afterPath="$PROJECT_DIR$/.idea/dataSources/385214fc-f780-4560-91ed-06c074010f56.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/scripts/main_custm.js" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/scripts/main_custm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/styles/main_custm.css" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/styles/main_custm.css" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -94,8 +92,8 @@
       <file leaf-file-name="main_custm.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/target/BankDepositSystem/WEB-INF/views/main_custm.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="121">
-              <caret line="183" column="45" lean-forward="false" selection-start-line="183" selection-start-column="45" selection-end-line="183" selection-end-column="45" />
+            <state relative-caret-position="187">
+              <caret line="131" column="53" lean-forward="false" selection-start-line="131" selection-start-column="53" selection-end-line="131" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -104,18 +102,8 @@
       <file leaf-file-name="main_custm.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/scripts/main_custm.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2024">
-              <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="console.sql" pinned="false" current-in-tab="false">
-        <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/385214fc-f780-4560-91ed-06c074010f56/console.sql">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="9" column="0" lean-forward="false" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+            <state relative-caret-position="365">
+              <caret line="109" column="25" lean-forward="true" selection-start-line="109" selection-start-column="25" selection-end-line="109" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -148,8 +136,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>createcreditcard</find>
-      <find>create</find>
       <find>creditCardNum</find>
       <find>submitCreateCredit</find>
       <find>query</find>
@@ -178,6 +164,8 @@
       <find>deposit</find>
       <find>creditCardNo</find>
       <find>recd</find>
+      <find>depositAjax</find>
+      <find>any</find>
     </findStrings>
     <replaceStrings>
       <replace>#</replace>
@@ -247,9 +235,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/controller/CustmOperationController.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/main_custm.html" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/styles/main_custm.css" />
-        <option value="$PROJECT_DIR$/target/BankDepositSystem/WEB-INF/views/main_custm.html" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/385214fc-f780-4560-91ed-06c074010f56/console.sql" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/scripts/main_custm.js" />
+        <option value="$PROJECT_DIR$/target/BankDepositSystem/WEB-INF/views/main_custm.html" />
       </list>
     </option>
   </component>
@@ -1233,7 +1221,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="177970000" />
+    <option name="totallyTimeSpent" value="178527000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1809,14 +1797,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/target/BankDepositSystem/WEB-INF/views/main_custm.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="121">
-          <caret line="183" column="45" lean-forward="false" selection-start-line="183" selection-start-column="45" selection-end-line="183" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/target/BankDepositSystem/WEB-INF/scripts/main_staff.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="286">
@@ -1825,10 +1805,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/target/BankDepositSystem/WEB-INF/views/main_custm.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="131" column="53" lean-forward="false" selection-start-line="131" selection-start-column="53" selection-end-line="131" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/scripts/main_custm.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2024">
-          <caret line="3" column="6" lean-forward="false" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="6" />
+        <state relative-caret-position="365">
+          <caret line="109" column="25" lean-forward="true" selection-start-line="109" selection-start-column="25" selection-end-line="109" selection-end-column="25" />
           <folding />
         </state>
       </provider>

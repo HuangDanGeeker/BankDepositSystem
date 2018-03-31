@@ -1,7 +1,6 @@
 /**
  * Created by 1 on 2018/3/18.
  */
-var p;
 var creditCardNum = -1;
 window.onload = function () {
     console.log($.cookie("userName"));
@@ -14,11 +13,13 @@ window.onload = function () {
     // ${'#custmName').oninputt 提供用户账号提示功能
 
     //绑定--动态按照用户名返回用户账号List
-    $('#createCustomerPanel #custmName').bind('input', function(param){checkCustmName(param);});
-    $('#anyTimeDealPanel #custmName').bind('input', function(param){checkCustmName(param);});
-    $('#scheduleDealPanel #custmName').bind('input', function(param){checkCustmName(param);});
     //绑定--按照选择的用户账号返回用户的详细信息
     $('#createCustomerPanel #custmNo').change(function(param){fillCustmInfomation(param);});
+
+    //绑定点击刷新&&重新请求客户的信用卡信息
+    $('#custmHistoryRadio').click( function () {
+        queryCreditCardInfo();
+    });
 }
 
 
@@ -116,36 +117,6 @@ function submitSpecificDeposit() {
         return;
     }
 
-}
-
-function checkCustmName(param){
-
-    var userName = param.currentTarget.value;
-    var parent = $(param.currentTarget).parentsUntil('#operatePanel')[3];
-    var custmNoSelect = $(parent).find('#custmNo')[0];
-    if(userName == ""){
-        return;
-    }
-    $.ajax({
-        url:"http://localhost:8080/BankDepositSystem/checkUser/" + userName,
-        dataType:'jsonp',
-        processData: true,
-        type:'put',
-        success:function(){},
-        error:function(XMLHttpRequest, textStatus, errorThrown) {
-            var result = eval("("+XMLHttpRequest.responseText+")");
-            var info = $(parent).find('#info')[0];
-            $(custmNoSelect).empty();
-            if(result.count != 0){
-                for(var i = 0; i < result.resultList.length; i++){
-                    $(custmNoSelect).append("<option>"+result.resultList[i]+"</option>>")
-                }
-                $(info).text("");
-            }else{
-                $(info).text("NO UserNo");
-            }
-        }
-    });
 }
 
 
