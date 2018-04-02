@@ -24,9 +24,9 @@ public class StaffService
         return (0 != staffList.size());
     }
 
-    public boolean regist(String name, Integer no, String passwd, String birthday, String phone){
+    public boolean regist(String name, String no, String passwd, String birthday, String phone, String address){
 
-        staffDAO.insertStaff(name, no, passwd, birthday, phone);
+        staffDAO.insertStaff(name, no, passwd, birthday, phone, address);
 
         return true;
     }

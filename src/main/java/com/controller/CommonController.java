@@ -42,7 +42,8 @@ public class CommonController {
         Map<String, Object> result = new HashMap<String, Object>();
         List<Customer> list = customerService.queryCustomer(userNo, userName);
         // we assume that it always get one and only one result
-        result.put("custm", list.get(0).reFormat());
+//        result.put("custm", list.get(0).reFormat());
+        result.put("custm", list.get(0));
         result.put("count", list.size());
         return result;
     }

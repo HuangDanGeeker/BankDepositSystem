@@ -17,7 +17,7 @@
 }
 
 #anyTimeDealDiv{
-    background-color: red;
+    background-color: chocolate;
     height: 50px;
     width: 12%;
     float:left;
@@ -30,7 +30,7 @@
 
 #scheduleDealDiv{
 
-    background-color: red;
+    background-color: chocolate;
     height: 50px;
     width: 12%;
     float:left;
@@ -41,7 +41,7 @@
     border-radius: 10px 10px;
 }
 #accountDetailDiv{
-    background-color: red;
+    background-color: chocolate;
     height: 50px;
     width: 10%;
     float:left;

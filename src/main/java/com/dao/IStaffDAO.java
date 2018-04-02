@@ -13,7 +13,7 @@ import java.util.List;
 public interface IStaffDAO {
 
     // 插入员工信息
-    void insertStaff(@Param("name") String name, @Param("no") Integer no, @Param("passwd") String passwd, @Param("birthday") String birthday, @Param("phone") String phone);
+    void insertStaff(@Param("name") String name, @Param("no") String no, @Param("passwd") String passwd, @Param("birthday") String birthday, @Param("phone") String phone, @Param("address") String address);
 
     // 删除员工信息
     void deleteStaff(@Param("name") String name, @Param("no") String no, @Param("passwd") Integer passwd, @Param("birthday") Integer birthday, @Param("phone") String phone);

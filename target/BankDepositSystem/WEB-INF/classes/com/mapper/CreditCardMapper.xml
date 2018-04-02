@@ -14,10 +14,10 @@
     </update>
 
     <insert id="createCreditCard">
-        INSERT INTO creditcard_#{custmNo} VALUES (#{cardNo}, 0, 0, CURRENTDATE());
+        INSERT INTO creditcard_${custmNo} VALUES (#{cardNo}, 0, 0, CURRENT_DATE());
     </insert>
     <update id="deposit">
-        UPDATE creditcard_${custmNo} SET nums = nums * (1+${basicIntrest}) + ${nums}*(1+intrest), dueTime=#{dueTime, jdbcType=DATE} WHERE cardNo=#{cardNo}
+        UPDATE creditcard_${custmNo} SET nums = nums * (1+${basicIntrest}) + ${nums}*(1+intrest), dueTime=#{dueTime} WHERE cardNo=#{cardNo}
     </update>
     <update id="require">
       UPDATE creditcard_${custmNo} SET nums=${nums}+nums, dueTime=CURRENT_DATE() WHERE cardNo=#{cardNo}

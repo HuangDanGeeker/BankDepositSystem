@@ -96,7 +96,7 @@ public class BasicController {
                 return result;
             }
             registNo = staffService.generateNo();
-            staffService.regist(registName, registNo, registPasswd, registBirthday, registPhone);
+            staffService.regist(registName, registNo.toString(), registPasswd, registBirthday, registPhone, registAddress);
             staffOperationService.createStaffOperTable(registNo.toString());
         }
 

@@ -10,7 +10,7 @@
     </resultMap>
 
     <update id="insertStaff">
-        INSERT INTO staff values(#{name}, #{no}, #{passwd}, #{birthday},#{phone});
+        INSERT INTO staff values(#{name}, #{no}, #{passwd}, #{birthday}, #{phone}, #{address});
 
     </update>
 

@@ -60,10 +60,10 @@ public class Customer {
         this.address = address;
     }
 
-    public Customer reFormat(){
-        birthday = birthday.substring(0,4)+"-"+birthday.substring(4,6)+"-"+birthday.substring(6);
-        System.out.println(birthday);
-        return this;
-    }
+//    public Customer reFormat(){
+//        birthday = birthday.substring(0,4)+"-"+birthday.substring(4,6)+"-"+birthday.substring(6);
+//        System.out.println(birthday);
+//        return this;
+//    }
 
 }

@@ -27,8 +27,6 @@ import java.util.Map;
 public class CustmOperationController {
 
     @Resource
-    private StaffOperationService staffOperationService;
-    @Resource
     private CreditAccountService creditCardService;
     @Resource
     private CustomerService customerService;
@@ -44,8 +42,6 @@ public class CustmOperationController {
 
         Map result = new HashMap<String, String>();
         result.put("status", "success");
-        //Staff operation record
-        staffOperationService.insertRecord(userNo, "CreateCreditCard", custmNo, customerService.queryCustomerName(custmNo), cardNo, null);
 
         return result;
     }
@@ -109,8 +105,6 @@ public class CustmOperationController {
 
 
         result.put("status", "success");
-        //Staff operation record
-        staffOperationService.insertRecord(userNo, "deposit", custmNo, customerService.queryCustomerName(custmNo), creditCardNum, nums);
         return result;
     }
     @RequestMapping("/require/{custmNo}/{creditCardNum}/{nums}")

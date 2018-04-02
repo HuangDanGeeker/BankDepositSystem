@@ -42,24 +42,29 @@ function logout() {
 
 
 function createCustom() {
-    displayPanel("block", "none", "none", "none");
+    displayPanel("block", "red", "none", "chocolate", "none", "chocolate", "none", "chocolate");
+
 }
 function anyTimeDeal() {
-    displayPanel("none", "none", "block",  "none");
+    displayPanel("none", "chocolate", "none", "chocolate", "block", "red", "none", "chocolate");
 }
 function scheduleDeal() {
-    displayPanel("none", "block", "none", "none");
+    displayPanel("none", "chocolate", "block", "red", "none", "chocolate", "none", "chocolate");
 }
 function accountDetail() {
-    displayPanel("none", "none", "none", "block");
+    displayPanel("none", "chocolate", "none", "chocolate", "none", "chocolate", "block", "red");
     $('#staffHistoryRadio').trigger('click');
 }
 
-function displayPanel(b1, b2, b3, b4) {
+function displayPanel(b1, c1, b2, c2, b3, c3, b4, c4) {
     $('#createCustomerPanel').css('display', b1);
     $('#anyTimeDealPanel').css('display', b2);
     $('#scheduleDealPanel').css('display', b3);
     $('#accountDetailPanel').css('display', b4);
+    $('#createCustmDiv').css('background-color', c1);
+    $('#scheduleDealDiv').css('background-color', c2);
+    $('#anyTimeDealDiv').css('background-color', c3);
+    $('#accountDetailDiv').css('background-color', c4);
 }
 
 
@@ -84,8 +89,16 @@ function submitCreateCredit(){
         success:function(){
         },
         error:function(XMLHttpRequest, textStatus, errorThrown) {
+            if(XMLHttpRequest.status != 200){
+                $('#infoModal .modal-body').html('请检查你的输入是否正确');
+                $('#infoModal .modal-title').text("Error");
+                $('#infoModal').modal('show');
+                return;
+            }
             var result = eval("("+XMLHttpRequest.responseText+")");
-            console.log("create credit card success");
+            $('#infoModal .modal-body').text("创建信用卡账号成功");
+            $('#infoModal .modal-title').text("Success");
+            $('#infoModal').modal('show');
         }
     });
 
@@ -150,6 +163,7 @@ function checkCustmName(param){
             var info = $(parent).find('#info')[0];
             $(custmNoSelect).empty();
             if(result.count != 0){
+                $(custmNoSelect).append('<option disabled selected>click and select a customer No</option>');
                 for(var i = 0; i < result.resultList.length; i++){
                     $(custmNoSelect).append("<option>"+result.resultList[i]+"</option>>")
                 }
@@ -206,7 +220,7 @@ function requireAjax(custmNo, creditCardNum, nums) {
 }
 
 function fillCustmInfomation(param) {
-
+    console.log("herhr");
     var parent = $(param.currentTarget).parentsUntil('#operatePanel')[3];
     var userNameInput = $(parent).find('#custmName')[0];
     var userNo = $(param.currentTarget).val();
@@ -290,7 +304,7 @@ function qeruyStaffOperRecrd(){
             $('#staffHistoryPanel tbody tr').remove();
             var parent = $('#staffHistoryPanel tbody');
             for(var i = 0; i < result.list.length; i++){
-                parent.append("<tr><td>"+result.list[i].custmName+"</td><td>"+result.list[i].custmNo+"</td><td>"+result.list[i].creditCardNo+"</td><td>"+result.list[i].nums+"</td><td>"+result.list[i].operDate+"</td></tr>");
+                parent.append("<tr><td>"+result.list[i].operType+"</td>><td>"+result.list[i].custmName+"</td><td>"+result.list[i].custmNo+"</td><td>"+result.list[i].creditCardNo+"</td><td>"+result.list[i].nums+"</td><td>"+result.list[i].operDate+"</td></tr>");
             }
         }
     });

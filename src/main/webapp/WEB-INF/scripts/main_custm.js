@@ -73,15 +73,23 @@ function submitCreateCredit(){
 
 
     $.ajax({
-        url:"http://localhost:8080/BankDepositSystem/custm/createcreditcard/"+custmNo+"/"+creditCardNum,
+        url:"http://localhost:8080/BankDepositSystem/custm/createcreditcard/"+custmNo+"/"+creditCardNo,
         dataType:'jsonp',
         processData: true,
         type:'put',
         success:function(){
         },
         error:function(XMLHttpRequest, textStatus, errorThrown) {
+            if(XMLHttpRequest.status != 200){
+                $('#infoModal .modal-body').html('请检查你的输入是否正确');
+                $('#infoModal .modal-title').text("Error");
+                $('#infoModal').modal('show');
+                return;
+            }
             var result = eval("("+XMLHttpRequest.responseText+")");
-            console.log("create credit card success");
+            $('#infoModal .modal-body').text("创建信用卡账号成功");
+            $('#infoModal .modal-title').text("Success");
+            $('#infoModal').modal('show');
         }
     });
 

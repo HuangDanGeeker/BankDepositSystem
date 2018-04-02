@@ -15,14 +15,14 @@
     <schema id="9" parent="1" name="performance_schema"/>
     <schema id="10" parent="1" name="test"/>
     <schema id="11" parent="1" name="web_qq_db"/>
-    <table id="12" parent="2" name="creditcard_0902150228"/>
-    <table id="13" parent="2" name="creditcard_902150208"/>
-    <table id="14" parent="2" name="creditcard_902150222"/>
-    <table id="15" parent="2" name="customer"/>
-    <table id="16" parent="2" name="num_set"/>
-    <table id="17" parent="2" name="rate_table"/>
-    <table id="18" parent="2" name="recd_staff_1"/>
-    <table id="19" parent="2" name="recd_staff_901150120"/>
+    <table id="12" parent="2" name="creditcard_902150202"/>
+    <table id="13" parent="2" name="creditcard_902150203"/>
+    <table id="14" parent="2" name="customer"/>
+    <table id="15" parent="2" name="num_set"/>
+    <table id="16" parent="2" name="rate_table"/>
+    <table id="17" parent="2" name="recd_staff_901150105"/>
+    <table id="18" parent="2" name="recd_staff_901150106"/>
+    <table id="19" parent="2" name="recd_staff_901150107"/>
     <table id="20" parent="2" name="staff"/>
     <column id="21" parent="12" name="cardNo">
       <Position>1</Position>
@@ -31,7 +31,7 @@
     </column>
     <column id="22" parent="12" name="nums">
       <Position>2</Position>
-      <DataType>int(11)|0</DataType>
+      <DataType>float|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
     <column id="23" parent="12" name="intrest">
@@ -72,171 +72,177 @@
       <ColNames>cardNo</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="31" parent="14" name="cardNo">
-      <Position>1</Position>
-      <DataType>varchar(20)|0</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="32" parent="14" name="nums">
-      <Position>2</Position>
-      <DataType>int(11)|0</DataType>
-      <DefaultExpression>&apos;0&apos;</DefaultExpression>
-    </column>
-    <column id="33" parent="14" name="intrest">
-      <Position>3</Position>
-      <DataType>float|0</DataType>
-      <DefaultExpression>&apos;0&apos;</DefaultExpression>
-    </column>
-    <column id="34" parent="14" name="dueTime">
-      <Position>4</Position>
-      <DataType>varchar(20)|0</DataType>
-    </column>
-    <key id="35" parent="14" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>cardNo</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="36" parent="15" name="name">
+    <column id="31" parent="14" name="name">
       <Position>1</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="37" parent="15" name="no">
+    <column id="32" parent="14" name="no">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="38" parent="15" name="passwd">
+    <column id="33" parent="14" name="passwd">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <DefaultExpression>&apos;111111&apos;</DefaultExpression>
     </column>
-    <column id="39" parent="15" name="birthday">
+    <column id="34" parent="14" name="birthday">
       <Position>4</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="40" parent="15" name="phone">
+    <column id="35" parent="14" name="phone">
       <Position>5</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="41" parent="15" name="address">
+    <column id="36" parent="14" name="address">
       <Position>6</Position>
       <DataType>varchar(40)|0</DataType>
     </column>
-    <key id="42" parent="15" name="PRIMARY">
+    <key id="37" parent="14" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>no</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="43" parent="16" name="no">
+    <column id="38" parent="15" name="no">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <column id="44" parent="16" name="type">
+    <column id="39" parent="15" name="type">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <key id="45" parent="16" name="PRIMARY">
+    <key id="40" parent="15" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>no</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="46" parent="17" name="type">
+    <column id="41" parent="16" name="type">
       <Position>1</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="47" parent="17" name="rate">
+    <column id="42" parent="16" name="rate">
       <Position>2</Position>
       <DataType>float|0</DataType>
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
     </column>
-    <key id="48" parent="17" name="PRIMARY">
+    <key id="43" parent="16" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>type</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="49" parent="18" name="operType">
+    <column id="44" parent="17" name="operType">
       <Position>1</Position>
       <DataType>varchar(20)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
-    <column id="50" parent="18" name="custmNo">
+    <column id="45" parent="17" name="custmNo">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="51" parent="18" name="custmName">
+    <column id="46" parent="17" name="custmName">
       <Position>3</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="52" parent="18" name="creditCardNo">
+    <column id="47" parent="17" name="creditCardNo">
       <Position>4</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="53" parent="18" name="nums">
+    <column id="48" parent="17" name="nums">
       <Position>5</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="54" parent="18" name="operDate">
+    <column id="49" parent="17" name="operDate">
       <Position>6</Position>
       <DataType>varchar(20)|0</DataType>
-      <NotNull>1</NotNull>
     </column>
-    <column id="55" parent="19" name="operType">
+    <column id="50" parent="18" name="operType">
       <Position>1</Position>
-      <DataType>varchar(4)|0</DataType>
+      <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="56" parent="19" name="custmNo">
+    <column id="51" parent="18" name="custmNo">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="57" parent="19" name="custmName">
+    <column id="52" parent="18" name="custmName">
       <Position>3</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="58" parent="19" name="creditCardNo">
+    <column id="53" parent="18" name="creditCardNo">
       <Position>4</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="59" parent="19" name="nums">
+    <column id="54" parent="18" name="nums">
       <Position>5</Position>
       <DataType>int(11)|0</DataType>
     </column>
-    <column id="60" parent="19" name="operDate">
+    <column id="55" parent="18" name="operDate">
       <Position>6</Position>
-      <DataType>varchar(10)|0</DataType>
+      <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="61" parent="20" name="name">
+    <column id="56" parent="19" name="operType">
       <Position>1</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="62" parent="20" name="No">
+    <column id="57" parent="19" name="custmNo">
       <Position>2</Position>
       <DataType>varchar(20)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="63" parent="20" name="passwd">
+    <column id="58" parent="19" name="custmName">
+      <Position>3</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="59" parent="19" name="creditCardNo">
+      <Position>4</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="60" parent="19" name="nums">
+      <Position>5</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="61" parent="19" name="operDate">
+      <Position>6</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="62" parent="20" name="name">
+      <Position>1</Position>
+      <DataType>varchar(20)|0</DataType>
+    </column>
+    <column id="63" parent="20" name="No">
+      <Position>2</Position>
+      <DataType>varchar(20)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="64" parent="20" name="passwd">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
-      <DefaultExpression>&apos;111111&apos;</DefaultExpression>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
     </column>
-    <column id="64" parent="20" name="birthday">
+    <column id="65" parent="20" name="birthday">
       <Position>4</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <column id="65" parent="20" name="phone">
+    <column id="66" parent="20" name="phone">
       <Position>5</Position>
       <DataType>varchar(20)|0</DataType>
     </column>
-    <key id="66" parent="20" name="PRIMARY">
+    <column id="67" parent="20" name="address">
+      <Position>6</Position>
+      <DataType>varchar(50)|0</DataType>
+      <DefaultExpression>&apos;&apos;</DefaultExpression>
+    </column>
+    <key id="68" parent="20" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>No</ColNames>
       <Primary>1</Primary>
