@@ -303,7 +303,7 @@ function qeruyStaffOperRecrd(){
             }
             $('#staffHistoryPanel tbody tr').remove();
             var parent = $('#staffHistoryPanel tbody');
-            for(var i = 0; i < result.list.length; i++){
+            for(var i = result.list.length-1; i > 0 ; i--){
                 parent.append("<tr><td>"+result.list[i].operType+"</td>><td>"+result.list[i].custmName+"</td><td>"+result.list[i].custmNo+"</td><td>"+result.list[i].creditCardNo+"</td><td>"+result.list[i].nums+"</td><td>"+result.list[i].operDate+"</td></tr>");
             }
         }
