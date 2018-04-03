@@ -45,8 +45,9 @@
                     </div>
                     <div class="form-group">
                         <label for="custmNo" class="col-sm-2 control-label">客户账号</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="custmNo" name="custmNo" />
+                        <div class="col-sm-8">
+                            <select class="form-control" id="custmNo" name="custmNo">
+                            </select>
                         </div>
                         <p id="info" class="text-center"></p>
                     </div>
@@ -62,19 +63,19 @@
                     <div class="form-group">
                         <label for="custmBirthday" class="col-sm-2 control-label">用户生日</label>
                         <div class="col-sm-10">
-                            <input type="date" class="form-control" id="custmBirthday" >
+                            <input type="date" class="form-control" id="custmBirthday" disabled="disabled">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="custmPhone" class="col-sm-2 control-label">用户电话</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="custmPhone" >
+                            <input type="text" class="form-control" id="custmPhone" disabled="disabled">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="custmAddress" class="col-sm-2 control-label">用户地址</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="custmAddress" />
+                            <input type="text" class="form-control" id="custmAddress" disabled="disabled" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -94,14 +95,16 @@
                     <div class="form-group">
                         <label for="custmNo" class="col-sm-2 control-label">客户账号</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="custmNo" name="custmNo" />
+                            <select class="form-control" id="custmNo" name="custmNo">
+                                <option>0902150228</option>
+                            </select>
                         </div>
                         <p id="info" class="text-center"></p>
                     </div>
                     <div class="form-group">
                         <label for="creditCardNum" class="col-sm-2 control-label">信用卡账号</label>
                         <div class="col-sm-8">
-                            <input value="2" type="text" class="form-control" id="creditCardNum" />
+                            <input type="text" class="form-control" id="creditCardNum" />
 
                         </div>
                         <button type="button" class="btn btn-warning" onclick="pasteCreditNum()">Paste！</button>
@@ -110,7 +113,7 @@
                     <div class="form-group">
                         <label for="custmNums" class="col-sm-2 control-label">金额</label>
                         <div class="col-sm-10">
-                            <input value="2" type="text" class="form-control" id="custmNums">
+                            <input type="text" class="form-control" id="custmNums">
                         </div>
                     </div>
                     <div class="form-group">
@@ -136,14 +139,16 @@
                     <div class="form-group">
                         <label for="custmNo" class="col-sm-2 control-label">客户账号</label>
                         <div class="col-sm-8">
-                            <input type="text" class="form-control" id="custmNo" name="custmNo" />
+                            <select class="form-control" id="custmNo" name="custmNo">
+                                <option>0902150228</option>
+                            </select>
                         </div>
                         <p id="info" class="text-center"></p>
                     </div>
                     <div class="form-group">
                         <label for="creditCardNum" class="col-sm-2 control-label">信用卡账号</label>
                         <div class="col-sm-8">
-                            <input value="2" type="text" class="form-control" id="creditCardNum" />
+                            <input type="text" class="form-control" id="creditCardNum" />
 
                         </div>
                         <button type="button" class="btn btn-warning" onclick="pasteCreditNum()">Paste！</button>
@@ -152,7 +157,7 @@
                     <div class="form-group">
                         <label for="custmNums" class="col-sm-2 control-label">金额</label>
                         <div class="col-sm-10">
-                            <input value="2" type="text" class="form-control" id="custmNums">
+                            <input type="text" class="form-control" id="custmNums">
                         </div>
                     </div>
                     <div class="form-group">
@@ -175,13 +180,37 @@
             </div>
            <div id="accountDetailPanel">
                <div class="btn-group" data-toggle="buttons">
-                   <label class="btn btn-primary active" id="custmHistoryRadio">
-                       <input type="radio" > 客户信用卡信息
+                   <label class="btn btn-primary active" id="staffHistoryRadio">
+                       <input type="radio" > 操作历史
+                   </label>
+                   <label class="btn btn-primary" id="custmHistoryRadio">
+                       <input type="radio" > 客户账号信息
                    </label>
                </div>
                <br>
                <br>
+               <div id="staffHistoryPanel" class="row" style="display: none;">
+                   <table class="table table-striped table-bordered pre-scrollable">
+                       <thead>
+                       <tr class="text-center">
+                           <th>客户名称</th>
+                           <th>客户账号</th>
+                           <th>信用卡号</th>
+                           <th>金 额</th>
+                           <th>操作日期</th>
+                       </tr>
+                       </thead>
+                       <tbody>
+                       </tbody>
+                    </table>
+               </div>
                <div id="custmHistoryPanel">
+                   <form class="form">
+                       <div class="form-group col-sm-10">
+                            <input type="text" id="custmNo" class="form-control" placeholder="please input the customer's No . . ." />
+                       </div>
+                       <button type="button" class="btn btn-success" onclick="qeruyCustmOperRecrd()">查询</button>
+                   </form>
                    <br>
                    <table class="table table-striped table-bordered pre-scrollable">
                    <thead>
