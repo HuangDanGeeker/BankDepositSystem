@@ -28,25 +28,32 @@ function logout() {
 
 
 
+
+
 function createCustom() {
-    displayPanel("block", "none", "none", "none");
+    displayPanel("block", "red", "none", "chocolate", "none", "chocolate", "none", "chocolate");
+
 }
 function anyTimeDeal() {
-    displayPanel("none", "none", "block",  "none");
+    displayPanel("none", "chocolate", "none", "chocolate", "block", "red", "none", "chocolate");
 }
 function scheduleDeal() {
-    displayPanel("none", "block", "none", "none");
+    displayPanel("none", "chocolate", "block", "red", "none", "chocolate", "none", "chocolate");
 }
 function accountDetail() {
-    displayPanel("none", "none", "none", "block");
+    displayPanel("none", "chocolate", "none", "chocolate", "none", "chocolate", "block", "red");
     queryCreditCardInfo();
 }
 
-function displayPanel(b1, b2, b3, b4) {
+function displayPanel(b1, c1, b2, c2, b3, c3, b4, c4) {
     $('#createCustomerPanel').css('display', b1);
     $('#anyTimeDealPanel').css('display', b2);
     $('#scheduleDealPanel').css('display', b3);
     $('#accountDetailPanel').css('display', b4);
+    $('#createCustmDiv').css('background-color', c1);
+    $('#scheduleDealDiv').css('background-color', c2);
+    $('#anyTimeDealDiv').css('background-color', c3);
+    $('#accountDetailDiv').css('background-color', c4);
 }
 
 
@@ -263,6 +270,7 @@ function processQueryCustmCridetCardInfo() {
             }
             $('#custmHistoryPanel tbody tr').remove();
             var parent = $('#custmHistoryPanel tbody');
+            parent.remove();
             for(var i = 0; i < result.list.length; i++){
                 parent.append("<tr><td>"+result.list[i].no+"</td><td>"+result.list[i].nums+"</td><td>"+result.list[i].intrest+"</td><td>"+result.list[i].dueTime+"</td></tr>");
             }
