@@ -268,9 +268,8 @@ function processQueryCustmCridetCardInfo() {
                 $('#infoModal').modal('show');
                 return;
             }
-            $('#custmHistoryPanel tbody tr').remove();
+            $('#custmHistoryPanel tbody').empty();
             var parent = $('#custmHistoryPanel tbody');
-            parent.remove();
             for(var i = 0; i < result.list.length; i++){
                 parent.append("<tr><td>"+result.list[i].no+"</td><td>"+result.list[i].nums+"</td><td>"+result.list[i].intrest+"</td><td>"+result.list[i].dueTime+"</td></tr>");
             }

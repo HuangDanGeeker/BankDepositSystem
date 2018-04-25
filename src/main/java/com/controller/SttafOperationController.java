@@ -99,7 +99,7 @@ public class SttafOperationController {
             int month = date.getMonth().getValue();
             month = month + monthScape;
             int year = yearScape + date.getYear() + month/12;
-            LocalDate endDate = LocalDate.of(year, (month % 12 + 1), date.getDayOfMonth());
+            LocalDate endDate = LocalDate.of(year, (month % 12 ), date.getDayOfMonth());
             System.out.println(endDate.toString());
             if(!cheackDueTime(endDate)){
                 result.put("status", "failure");

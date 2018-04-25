@@ -272,7 +272,6 @@ function generateCreditNum() {
 }
 
 function queryHistoryView(){
-    console.log("herherh");
     $('#staffHistoryPanel').slideToggle();
     $('#custmHistoryPanel').slideToggle();
 }
@@ -301,7 +300,7 @@ function qeruyStaffOperRecrd(){
                 $('#infoModal').modal('show');
                 return;
             }
-            $('#staffHistoryPanel tbody').remove();
+            $('#staffHistoryPanel tbody').empty();
             var parent = $('#staffHistoryPanel tbody');
             for(var i = result.list.length-1; i > 0 ; i--){
                 parent.append("<tr><td>"+result.list[i].operType+"</td>><td>"+result.list[i].custmName+"</td><td>"+result.list[i].custmNo+"</td><td>"+result.list[i].creditCardNo+"</td><td>"+result.list[i].nums+"</td><td>"+result.list[i].operDate+"</td></tr>");
@@ -333,9 +332,8 @@ function qeruyCustmOperRecrd(){
                 $('#infoModal').modal('show');
                 return;
             }
-            $('#custmHistoryPanel tbody tr').remove();
+            $('#custmHistoryPanel tbody').empty();
             var parent = $('#custmHistoryPanel tbody');
-            parent.remove();
             for(var i = 0; i < result.list.length; i++){
                 parent.append("<tr><td>"+result.list[i].no+"</td><td>"+result.list[i].nums+"</td><td>"+result.list[i].intrest+"</td><td>"+result.list[i].dueTime+"</td></tr>");
             }
